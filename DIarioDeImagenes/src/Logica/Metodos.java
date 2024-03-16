@@ -11,6 +11,7 @@ public class Metodos {
     String directionTmp;//captar direction temporal de la imagen
     JFileChooser explorador = new JFileChooser();//explorador de archivos
     static Nodo primero,ultimo;
+   
     public static void Insertar(int id, String fecha, String nombre){
         Nodo auxiliar = new Nodo(id,fecha,nombre,null,null);
         if(ultimo==null){

@@ -5,7 +5,6 @@
 package Persistencia;
 
 import GUI.Simplificado;
-import GUI.Ventana;
 import com.formdev.flatlaf.*;
 
 import javax.swing.UIManager;

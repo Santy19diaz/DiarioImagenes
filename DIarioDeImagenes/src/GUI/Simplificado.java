@@ -55,7 +55,7 @@ public class Simplificado extends javax.swing.JFrame {
         setTitle("MyImageDiary");
         setPreferredSize(new java.awt.Dimension(498, 580));
         setResizable(false);
-        setSize(new java.awt.Dimension(478, 540));
+        setSize(new java.awt.Dimension(478, 580));
 
         jTabbedInteract.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
 

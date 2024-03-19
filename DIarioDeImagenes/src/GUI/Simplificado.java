@@ -263,8 +263,8 @@ public class Simplificado extends javax.swing.JFrame {
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
         // TODO add your handling code here:
-        New nuevo = new New();
-        nuevo.setVisible(true);
+
+  
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

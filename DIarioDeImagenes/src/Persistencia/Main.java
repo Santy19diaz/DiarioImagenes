@@ -4,17 +4,31 @@
  */
 package Persistencia;
 
+import GUI.Simplificado;
+import GUI.Ventana;
+import com.formdev.flatlaf.*;
+
+import javax.swing.UIManager;
+
 /**
  *
  * @author 19dia
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        try {
+            UIManager.setLookAndFeel(new FlatIntelliJLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+        
+        Simplificado simple = new Simplificado();
+        simple.setVisible(true);
+        simple.setLocationRelativeTo(null);
+
+        
     }
     
 }

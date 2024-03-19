@@ -1,8 +1,17 @@
+
 package GUI;
 /**
  * @author emmanuelalcala
  */
 import Logica.*;
+
+package GUI;
+
+/**
+ *
+ * @author emmanuelalcala
+ */
+
 public class New extends javax.swing.JFrame {
 
     /**
@@ -25,8 +34,10 @@ public class New extends javax.swing.JFrame {
         jTextFieldName = new javax.swing.JTextField();
         jButtonChoise = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
+
         jLabelDate = new javax.swing.JLabel();
         jTextFieldDate = new javax.swing.JTextField();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,6 +46,7 @@ public class New extends javax.swing.JFrame {
         jButtonChoise.setText("Seleccionar imagen");
 
         jButtonGuardar.setText("Guardar");
+
 
         jLabelDate.setText("Fecha de la imagen:");
 
@@ -46,6 +58,7 @@ public class New extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
+
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonChoise)
@@ -56,6 +69,17 @@ public class New extends javax.swing.JFrame {
                     .addComponent(jLabelDate)
                     .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
+
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonChoise)
+                        .addGap(38, 38, 38)
+                        .addComponent(jButtonGuardar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabelName)
+                        .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,6 +89,7 @@ public class New extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+
                 .addComponent(jLabelDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -73,6 +98,12 @@ public class New extends javax.swing.JFrame {
                     .addComponent(jButtonChoise)
                     .addComponent(jButtonGuardar))
                 .addGap(62, 62, 62))
+
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonChoise)
+                    .addComponent(jButtonGuardar))
+                .addContainerGap(24, Short.MAX_VALUE))
+
         );
 
         pack();
@@ -82,9 +113,13 @@ public class New extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonChoise;
     private javax.swing.JButton jButtonGuardar;
+
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JTextField jTextFieldDate;
+
+    private javax.swing.JLabel jLabelName;
+
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jButtonChoise" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButtonGuardar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabelName" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldName" min="-2" pref="280" max="-2" attributes="0"/>
+                  <Component id="jLabelDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldDate" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -37,6 +53,7 @@
                   </Group>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,11 +65,21 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldName" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+
+              <Component id="jLabelDate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTextFieldDate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonChoise" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+
               <EmptySpace pref="24" max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,5 +102,17 @@
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
     </Component>
+
+    <Component class="javax.swing.JLabel" name="jLabelDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha de la imagen:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DD/MM/YY"/>
+      </Properties>
+    </Component>
+
   </SubComponents>
 </Form>

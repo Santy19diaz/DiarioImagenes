@@ -33,6 +33,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jButtonSerch" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jButtonGoToFirst" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonBack" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelName" min="-2" pref="167" max="-2" attributes="0"/>
@@ -53,19 +65,43 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+
                                   <Component id="jScrollPane1" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabelImage" min="-2" pref="298" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jButtonNext" min="-2" max="-2" attributes="0"/>
+
+                                          <Component id="jButtonGoToEnd" min="-2" max="-2" attributes="0"/>
+
                                           <Component id="jButtonGoToEnd" min="-2" pref="60" max="-2" attributes="0"/>
+
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
+
+                      <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabelName" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTextField2" min="-2" pref="166" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabelDate" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTextField1" min="-2" pref="166" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+
                       <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
           </Group>
@@ -81,6 +117,40 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelDate" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jButtonSerch" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelName" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="jButtonGoToEnd" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelImage" alignment="3" min="-2" pref="275" max="-2" attributes="0"/>
+                              <Component id="jButtonNext" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonBack" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                      <Component id="jButtonGoToFirst" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelDate" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
@@ -103,12 +173,17 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonNew" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonDelate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+
+              <EmptySpace max="32767" attributes="0"/>
+
               <EmptySpace pref="24" max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -159,12 +234,20 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonGoToEnd">
       <Properties>
+
+        <Property name="text" type="java.lang.String" value="Ir final"/>
+
         <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonGoToFirst">
       <Properties>
+
+        <Property name="text" type="java.lang.String" value="Ir inico"/>
+
         <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonSerch">
@@ -177,7 +260,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonNew">
       <Properties>
+
+        <Property name="text" type="java.lang.String" value="Agregar"/>
+
         <Property name="text" type="java.lang.String" value="Insertar"/>
+
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNewActionPerformed"/>
@@ -188,5 +275,17 @@
         <Property name="text" type="java.lang.String" value="Borrar"/>
       </Properties>
     </Component>
+
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+      </Properties>
+    </Component>
+
   </SubComponents>
 </Form>

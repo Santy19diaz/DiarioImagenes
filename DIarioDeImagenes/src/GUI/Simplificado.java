@@ -8,10 +8,7 @@ import Logica.Metodos;
 import Logica.Nodo;
 import javax.swing.JOptionPane;
 
-/**
- 
- * @author 19dia
- */
+
 public class Simplificado extends javax.swing.JFrame {
     Metodos metodo = new Metodos();
     Nodo primer = null, ultimo = null, aux;//punteros

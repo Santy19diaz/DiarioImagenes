@@ -4,12 +4,17 @@
  */
 package GUI;
 
+import Logica.Metodos;
+import Logica.Nodo;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 19dia
  */
 public class Simplificado extends javax.swing.JFrame {
-
+    Metodos metodo = new Metodos();
+    Nodo primer = null, ultimo = null, aux;//punteros
     /**
      * Creates new form simplificado
      */
@@ -17,6 +22,28 @@ public class Simplificado extends javax.swing.JFrame {
         initComponents();
     }
 
+    void  borrarDatos(){
+        jTextFieldName.setText("");
+        jTextFieldDate.setText("");
+        jTextFieldID.setText("");
+        jLabelImage1.setIcon(null);
+        jLabelImage1.setText("");
+        
+    }
+    
+    void irPrincipio(){
+        aux = primer;
+    }
+    
+    void irFinal() {
+        aux = ultimo;
+    }
+    
+    public void setImagenJLabel(String direccionImagen) {
+        metodo.mostrarImagen(jLabelImage, direccionImagen);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,6 +53,7 @@ public class Simplificado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jTabbedInteract = new javax.swing.JTabbedPane();
         jPanelDefault = new javax.swing.JPanel();
         jLabelDate = new javax.swing.JLabel();
@@ -50,21 +78,28 @@ public class Simplificado extends javax.swing.JFrame {
         jLabelDate1 = new javax.swing.JLabel();
         jLabelName1 = new javax.swing.JLabel();
         jLabelImage1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldID = new javax.swing.JTextField();
+
+        jLabel2.setText("I");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyImageDiary");
-        setPreferredSize(new java.awt.Dimension(498, 580));
         setResizable(false);
         setSize(new java.awt.Dimension(478, 580));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedInteract.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
 
         jPanelDefault.setMinimumSize(new java.awt.Dimension(100, 540));
         jPanelDefault.setPreferredSize(new java.awt.Dimension(498, 540));
+        jPanelDefault.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelDate.setText("FECHA");
+        jPanelDefault.add(jLabelDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 14, 60, 25));
 
         jTextField1.setEditable(false);
+        jPanelDefault.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 15, 166, -1));
 
         jTextField2.setEditable(false);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -72,8 +107,10 @@ public class Simplificado extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        jPanelDefault.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 47, 166, -1));
 
         jLabelName.setText("NOMBRE");
+        jPanelDefault.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 46, 60, 25));
 
         jButtonSerch.setText("Buscar");
         jButtonSerch.addActionListener(new java.awt.event.ActionListener() {
@@ -81,19 +118,51 @@ public class Simplificado extends javax.swing.JFrame {
                 jButtonSerchActionPerformed(evt);
             }
         });
+        jPanelDefault.add(jButtonSerch, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 14, -1, -1));
 
         jButtonNext.setText(">");
+        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextActionPerformed(evt);
+            }
+        });
+        jPanelDefault.add(jButtonNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 196, -1, -1));
 
         jButtonGoToEnd.setText("Ir final");
+        jButtonGoToEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoToEndActionPerformed(evt);
+            }
+        });
+        jPanelDefault.add(jButtonGoToEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 225, -1, -1));
 
         jLabelImage.setBackground(new java.awt.Color(0, 0, 0));
         jLabelImage.setText("IMAGE");
+        jPanelDefault.add(jLabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 96, 290, 250));
 
         jButtonBack.setText("<");
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+        });
+        jPanelDefault.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 196, -1, -1));
 
-        jButtonGoToFirst.setText("Ir inico");
+        jButtonGoToFirst.setText("Ir inicio");
+        jButtonGoToFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoToFirstActionPerformed(evt);
+            }
+        });
+        jPanelDefault.add(jButtonGoToFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 225, -1, -1));
 
         jButtonDelate.setText("Borrar");
+        jButtonDelate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDelateActionPerformed(evt);
+            }
+        });
+        jPanelDefault.add(jButtonDelate, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 476, -1, -1));
 
         jButtonNew.setText("Agregar");
         jButtonNew.addActionListener(new java.awt.event.ActionListener() {
@@ -101,164 +170,75 @@ public class Simplificado extends javax.swing.JFrame {
                 jButtonNewActionPerformed(evt);
             }
         });
+        jPanelDefault.add(jButtonNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 476, -1, -1));
 
         jTextAreaDescription.setColumns(20);
         jTextAreaDescription.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDescription);
 
-        javax.swing.GroupLayout jPanelDefaultLayout = new javax.swing.GroupLayout(jPanelDefault);
-        jPanelDefault.setLayout(jPanelDefaultLayout);
-        jPanelDefaultLayout.setHorizontalGroup(
-            jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonSerch)
-                            .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                                .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButtonGoToFirst)
-                                    .addComponent(jButtonBack))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                                        .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButtonNext)
-                                            .addComponent(jButtonGoToEnd))))))
-                        .addGap(0, 18, Short.MAX_VALUE))
-                    .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                                .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                                .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDefaultLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonDelate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonNew)
-                .addGap(30, 30, 30))
-        );
-        jPanelDefaultLayout.setVerticalGroup(
-            jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDefaultLayout.createSequentialGroup()
-                .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSerch)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addComponent(jButtonGoToEnd))
-                            .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonNext)
-                                .addComponent(jButtonBack)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelDefaultLayout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jButtonGoToFirst)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonNew)
-                    .addComponent(jButtonDelate))
-                .addGap(20, 20, 20))
-        );
+        jPanelDefault.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 359, 298, -1));
 
         jTabbedInteract.addTab("Diario", jPanelDefault);
 
         jPanelAD.setPreferredSize(new java.awt.Dimension(498, 540));
+        jPanelAD.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonChoise.setText("Seleccionar imagen");
+        jButtonChoise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChoiseActionPerformed(evt);
+            }
+        });
+        jPanelAD.add(jButtonChoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 453, -1, -1));
 
         jTextFieldDate.setText("DD/MM/YY");
+        jTextFieldDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDateActionPerformed(evt);
+            }
+        });
+        jPanelAD.add(jTextFieldDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 103, 280, -1));
 
         jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarActionPerformed(evt);
+            }
+        });
+        jPanelAD.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 453, -1, -1));
+        jPanelAD.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 51, 280, -1));
 
         jLabelDate1.setText("Fecha de la imagen:");
+        jPanelAD.add(jLabelDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 80, -1, -1));
 
         jLabelName1.setText("Nombre de imagen:");
+        jPanelAD.add(jLabelName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 28, -1, -1));
 
         jLabelImage1.setBackground(new java.awt.Color(0, 0, 0));
         jLabelImage1.setText("IMAGE");
+        jPanelAD.add(jLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 270, 240));
 
-        javax.swing.GroupLayout jPanelADLayout = new javax.swing.GroupLayout(jPanelAD);
-        jPanelAD.setLayout(jPanelADLayout);
-        jPanelADLayout.setHorizontalGroup(
-            jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelADLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addGroup(jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelADLayout.createSequentialGroup()
-                        .addComponent(jButtonChoise)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonGuardar))
-                    .addComponent(jLabelName1)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelDate1)
-                    .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelADLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
-        );
-        jPanelADLayout.setVerticalGroup(
-            jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelADLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabelName1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelDate1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonChoise)
-                    .addComponent(jButtonGuardar))
-                .addGap(62, 62, 62))
-        );
+        jLabel1.setText("ID:");
+        jPanelAD.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 132, 37, -1));
+
+        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIDActionPerformed(evt);
+            }
+        });
+        jPanelAD.add(jTextFieldID, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 155, 280, -1));
 
         jTabbedInteract.addTab("Ad", jPanelAD);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedInteract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedInteract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jTabbedInteract, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSerchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSerchActionPerformed
-        // TODO add your handling code here:
-        
+        Serch search = new Serch();
+        search.configurarOperacionDeCierre();
+        search.setVisible(true);
     }//GEN-LAST:event_jButtonSerchActionPerformed
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
@@ -270,6 +250,80 @@ public class Simplificado extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButtonChoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChoiseActionPerformed
+        metodo.captarImagen();
+        metodo.mostrarImagen(jLabelImage1);
+        metodo.mostrarImagen(jLabelImage);
+        
+        
+    }//GEN-LAST:event_jButtonChoiseActionPerformed
+
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+        int id = Integer.parseInt(jTextFieldID.getText());
+        String fecha = jTextFieldDate.getText();
+        String nombre = jTextFieldName.getText();
+
+        // Insertar el nuevo nodo en la lista enlazada
+        metodo.Insertar(id, fecha, nombre);
+
+        String cadena = "Nombre: " + jTextFieldName.getText()
+                + "\nFecha: " + jTextFieldDate.getText()
+                + "\nID: " + jTextFieldID.getText();
+        
+        jTextAreaDescription.setText(cadena);
+        
+        borrarDatos();
+
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jButtonGoToFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToFirstActionPerformed
+        irPrincipio();
+        metodo.mostrarImagen(jLabelImage);
+        
+    }//GEN-LAST:event_jButtonGoToFirstActionPerformed
+
+    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
+        if (aux != null && aux.getSiguiente() != null) {
+            aux = aux.getSiguiente();
+            // Mostrar la imagen del nodo actual
+            metodo.mostrarImagen(jLabelImage, aux.getFoto());
+        } else {
+            JOptionPane.showMessageDialog(null, "No quedan más elementos por la derecha");
+        }
+    }//GEN-LAST:event_jButtonNextActionPerformed
+
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+        if (aux != null && aux.getAnterior() != null) {
+            aux = aux.getAnterior();
+            // Mostrar la imagen del nodo actual
+            metodo.mostrarImagen(jLabelImage, aux.getFoto());
+        } else {
+            JOptionPane.showMessageDialog(null, "No quedan más elementos por la izquierda");
+        }
+    }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jButtonDelateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDelateActionPerformed
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la ID:"));
+        metodo.eliminarDato(id);
+        jLabelImage.setIcon(null);
+        jLabelImage1.setIcon(null);
+        jTextAreaDescription.setText(null);
+        borrarDatos();
+    }//GEN-LAST:event_jButtonDelateActionPerformed
+
+    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIDActionPerformed
+
+    private void jButtonGoToEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToEndActionPerformed
+        irFinal();
+        metodo.mostrarImagen(jLabelImage);
+    }//GEN-LAST:event_jButtonGoToEndActionPerformed
+
+    private void jTextFieldDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,6 +371,8 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNew;
     private javax.swing.JButton jButtonNext;
     private javax.swing.JButton jButtonSerch;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelDate1;
     private javax.swing.JLabel jLabelImage;
@@ -331,6 +387,7 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldDate;
+    private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
 }

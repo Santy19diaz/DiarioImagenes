@@ -9,7 +9,7 @@ import Logica.Nodo;
 import javax.swing.JOptionPane;
 
 /**
- *
+ 
  * @author 19dia
  */
 public class Simplificado extends javax.swing.JFrame {

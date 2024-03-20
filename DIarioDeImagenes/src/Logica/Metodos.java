@@ -8,12 +8,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class Metodos {
-    String directionTmp;//captar direction temporal de la imagen
-    JFileChooser explorador = new JFileChooser();//explorador de archivos
+    static String directionTmp;//captar direction temporal de la imagen
+    static JFileChooser explorador = new JFileChooser();//explorador de archivos
     static Nodo primero,ultimo;
    
-    public static void Insertar(int id, String fecha, String nombre){
-        Nodo auxiliar = new Nodo(id,fecha,nombre,null,null);
+    public static void Insertar(int id, String fecha, String nombre,String foto){
+        Nodo auxiliar = new Nodo(id,fecha,nombre,foto,null,null);
         if(ultimo==null){
 
             ultimo = auxiliar;
@@ -30,7 +30,7 @@ public class Metodos {
         }
 
     }
-    void eliminarDato(int id){//con eliminar el ID del nodo, se elimina toda la información
+    public void eliminarDato(int id){//con eliminar el ID del nodo, se elimina toda la información
         Nodo auxiliar=primero;
         boolean ciclo = true;
         while(ciclo){
@@ -46,7 +46,7 @@ public class Metodos {
             }
         }
     }
-    void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
+    public static void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
         try{
             File auxFile;
             explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes","jpg","png","jpeg","gif"));
@@ -57,7 +57,7 @@ public class Metodos {
         }catch(Exception ex){JOptionPane.showMessageDialog(null,"Error al abrir el archivo");}
     }
 
-    public JLabel mostrarImagen(JLabel fotoLabel){/*necesitamos crear un Jlabel donde iran las imágenes,
+    public static JLabel mostrarImagen(JLabel fotoLabel){/*necesitamos crear un Jlabel donde iran las imágenes,
                                                     debemos pasar ese Jlabel como parámetro para que cambie la imagen*/
         try{
             ImageIcon foto;
@@ -70,4 +70,38 @@ public class Metodos {
         }
         return fotoLabel;
     }
+
+    public static String getDirectionTmp() {
+        return directionTmp;
+    }
+
+    public static void setDirectionTmp(String directionTmp) {
+        Metodos.directionTmp = directionTmp;
+    }
+
+    public static JFileChooser getExplorador() {
+        return explorador;
+    }
+
+    public static void setExplorador(JFileChooser explorador) {
+        Metodos.explorador = explorador;
+    }
+
+    public static Nodo getPrimero() {
+        return primero;
+    }
+
+    public static void setPrimero(Nodo primero) {
+        Metodos.primero = primero;
+    }
+
+    public static Nodo getUltimo() {
+        return ultimo;
+    }
+
+    public static void setUltimo(Nodo ultimo) {
+        Metodos.ultimo = ultimo;
+    }
+    
+    
 }

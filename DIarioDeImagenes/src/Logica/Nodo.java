@@ -13,12 +13,13 @@ public class Nodo {
     public Nodo (){
     }
 
-    public Nodo(int id, String fecha, String nombre, Nodo siguiente, Nodo anterior) {
+    public Nodo(int id, String fecha, String nombre, String foto, Nodo siguiente, Nodo anterior) {
         this.id = id;
+        this.foto = foto;
         this.fecha = fecha;
         this.nombre = nombre;
-        this.siguiente = siguiente;
         this.anterior = anterior;
+        this.siguiente = siguiente;
     }
 
     public Nodo(int id, String foto, String fecha, String nombre, String descripcion, String emote, Nodo siguiente, Nodo anterior) {
@@ -31,6 +32,8 @@ public class Nodo {
         this.siguiente = siguiente;
         this.anterior = anterior;
     }
+    
+    
 
     public int getId() {
         return id;

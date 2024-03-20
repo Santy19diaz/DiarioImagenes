@@ -1,6 +1,9 @@
 package GUI;
 
+import Logica.Metodos;
+//import static Logica.Metodos.*;
 import Logica.Nodo;
+//import static Logica.Nodo.*;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.Icon;
@@ -10,19 +13,20 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+
 /**
  *
  * @author 19dia
  */
 
-public class Simplificado extends javax.swing.JFrame {
+public class prueba extends javax.swing.JFrame {
     int id = 1;
     String directionTmp;//captar direction temporal de la imagen
     JFileChooser explorador = new JFileChooser();//explorador de archivos
     Nodo primero,ultimo,aux;
     
 
-    public Simplificado() {
+    public prueba() {
         initComponents();
     }
 
@@ -59,7 +63,6 @@ public class Simplificado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyImageDiary");
-        setPreferredSize(new java.awt.Dimension(498, 580));
         setResizable(false);
         setSize(new java.awt.Dimension(478, 580));
 
@@ -84,28 +87,13 @@ public class Simplificado extends javax.swing.JFrame {
         });
 
         jButtonNext.setText(">");
-        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNextActionPerformed(evt);
-            }
-        });
 
         jButtonGoToEnd.setText("Ir final");
-        jButtonGoToEnd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGoToEndActionPerformed(evt);
-            }
-        });
 
         jLabelImage.setBackground(new java.awt.Color(0, 0, 0));
         jLabelImage.setText("IMAGE");
 
         jButtonBack.setText("<");
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBackActionPerformed(evt);
-            }
-        });
 
         jButtonGoToFirst.setText("Ir inico");
         jButtonGoToFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -302,68 +290,46 @@ public class Simplificado extends javax.swing.JFrame {
 
     private void jButtonSerchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSerchActionPerformed
         TabPanel.setSelectedIndex(2);
-
+        
     }//GEN-LAST:event_jButtonSerchActionPerformed
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
         TabPanel.setSelectedIndex(1);
 
-
+  
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonChoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChoiseActionPerformed
         captarImagen();
         mostrarImagen(previewLabel);
-
+        
     }//GEN-LAST:event_jButtonChoiseActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        Insertar(id, jTextFieldDate.getText(), jTextFieldName.getText(), directionTmp);
+        Insertar(id,jTextFieldDate.getText(),jTextFieldName.getText(),directionTmp);
         previewLabel.setIcon(null);
         jTextFieldDate.setText("DD/MM/YY");
         jTextFieldName.setText("");
-
+        
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jButtonGoToFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToFirstActionPerformed
         aux = primero;
-        mostrarDatos();
+        directionTmp = aux.getFoto();
+        NOMBRE.setText(aux.getNombre());
+        mostrarImagen(jLabelImage);
     }//GEN-LAST:event_jButtonGoToFirstActionPerformed
 
-    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
-        aux = aux.getSiguiente();
-        if (aux == null) {
-            JOptionPane.showMessageDialog(null, "por eso joven");
-            }else{
-                mostrarDatos();
-            }
-        
-    }//GEN-LAST:event_jButtonNextActionPerformed
-
-    private void jButtonGoToEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToEndActionPerformed
-        aux = ultimo;
-        mostrarDatos();
-    }//GEN-LAST:event_jButtonGoToEndActionPerformed
-
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        aux = aux.getAnterior();
-        if (aux == null) {
-            JOptionPane.showMessageDialog(null, "por eso joven");
-            }else{
-                mostrarDatos();
-            }
-    }//GEN-LAST:event_jButtonBackActionPerformed
-
-    public void Insertar(int id, String fecha, String nombre, String foto) {
-        Nodo auxiliar = new Nodo(id, fecha, nombre, foto, null, null);
-        if (ultimo == null) {
+    public  void Insertar(int id, String fecha, String nombre,String foto){
+        Nodo auxiliar = new Nodo(id,fecha,nombre,foto,null,null);
+        if(ultimo==null){
 
             ultimo = auxiliar;
             primero = auxiliar;
             primero.setAnterior(ultimo);
             ultimo.setSiguiente(primero);
 
-        } else {
+        }else{
             ultimo.setSiguiente(auxiliar);
             primero.setAnterior(auxiliar);
             auxiliar.setAnterior(ultimo);
@@ -372,62 +338,47 @@ public class Simplificado extends javax.swing.JFrame {
         }
 
     }
-
-    public void eliminarDato(int id) {//con eliminar el ID del nodo, se elimina toda la información
-        Nodo auxiliar = primero;
+    public void eliminarDato(int id){//con eliminar el ID del nodo, se elimina toda la información
+        Nodo auxiliar=primero;
         boolean ciclo = true;
-        while (ciclo) {
-            if (id == auxiliar.getId()) {
+        while(ciclo){
+            if(id == auxiliar.getId()){
                 auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
-                JOptionPane.showMessageDialog(null, "El Nodo se elimino!!!");
+                JOptionPane.showMessageDialog(null,"El Nodo se elimino!!!");
                 ciclo = false;
-            } else if (auxiliar.getSiguiente() == ultimo) {
-                JOptionPane.showMessageDialog(null, "El dato no existe!!!");
+            }else if (auxiliar.getSiguiente()==ultimo){
+                JOptionPane.showMessageDialog(null,"El dato no existe!!!");
                 ciclo = false;
-            } else {
+            }else{
                 auxiliar = auxiliar.getSiguiente();
             }
         }
     }
-
-    public void captarImagen() {//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
-        try {
+    public  void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
+        try{
             File auxFile;
-            explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes", "jpg", "png", "jpeg", "gif"));
+            explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes","jpg","png","jpeg","gif"));
             explorador.showOpenDialog(null);
             auxFile = explorador.getSelectedFile();
             directionTmp = auxFile.getAbsolutePath();
 
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
-        }
+        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Error al abrir el archivo");}
     }
 
-    public JLabel mostrarImagen(JLabel fotoLabel) {/*necesitamos crear un Jlabel donde iran las imágenes,
+    public  JLabel mostrarImagen(JLabel fotoLabel){/*necesitamos crear un Jlabel donde iran las imágenes,
                                                     debemos pasar ese Jlabel como parámetro para que cambie la imagen*/
-        try {
+        try{
             ImageIcon foto;
             foto = new ImageIcon(directionTmp);
             Icon icono;
-            icono = new ImageIcon(foto.getImage().getScaledInstance(fotoLabel.getWidth(), fotoLabel.getHeight(), Image.SCALE_DEFAULT));
+            icono = new ImageIcon(foto.getImage().getScaledInstance(fotoLabel.getWidth(),fotoLabel.getHeight(),Image.SCALE_DEFAULT));
             fotoLabel.setIcon(icono);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null,"Error al abrir el archivo");
         }
         return fotoLabel;
     }
-    
-       void mostrarDatos(){
-        directionTmp = aux.getFoto();
-        NOMBRE.setText(aux.getNombre());
-        FECHA.setText(aux.getFecha());
-        mostrarImagen(jLabelImage);
-       }
 
-    /**
-     * @param args the command line arguments
-     */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FECHA;

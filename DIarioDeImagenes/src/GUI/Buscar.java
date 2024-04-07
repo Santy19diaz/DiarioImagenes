@@ -1,6 +1,7 @@
 
 package GUI;
 
+import Logica.Nodo;
 import javax.swing.JOptionPane;
 
 /**
@@ -8,13 +9,15 @@ import javax.swing.JOptionPane;
  * @author emmanuelalcala
  */
 public class Buscar extends javax.swing.JFrame {
-
-    public Buscar() {
+    private Simplificado simplificado;
+    
+    public Buscar(Simplificado simplificado) {
         initComponents();
         setLocationRelativeTo(null); //Centrar la ventana
-        
+        this.simplificado = simplificado;
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,11 +68,35 @@ public class Buscar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButtonSerchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSerchActionPerformed
-           if(textFieldBuscar.getText().equals("")) {
+        if(textFieldBuscar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
+            return;
+        } 
+        Nodo nodo = simplificado.primero;
+        String nombre = textFieldBuscar.getText();
+        Boolean encontrado = false;
+        
+        //Búsqueda """binaria""" (secuencial)
+        while(true) {
+            if(nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
+                encontrado = true;
+                break;
+            }
+            if(nodo == simplificado.ultimo) { //Si no lo encuentra
+                break;
+            }
+            nodo = nodo.getSiguiente();
         }
+        
+        if(!encontrado) {
+            JOptionPane.showMessageDialog(null, "No encontrado");
+            return;
+        }
+        
+        simplificado.aux = nodo;
+        simplificado.mostrarDatos();
     }//GEN-LAST:event_jButtonSerchActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

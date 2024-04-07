@@ -28,7 +28,7 @@ public class Simplificado extends javax.swing.JFrame {
         
         
         
-    }
+    }  
     
     public void textoNombre(String nombre) {
         this.textoNombre.setText(nombre);
@@ -946,7 +946,7 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        Buscar buscar = new Buscar();
+        Buscar buscar = new Buscar(this);
         buscar.setVisible(true);
         buscar.setTitle("Buscar"); // Establecer el título
         buscar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana

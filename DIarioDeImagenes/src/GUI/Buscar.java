@@ -74,23 +74,10 @@ public class Buscar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
             return;
         } 
-        Nodo nodo = simplificado.primero;
         String nombre = textFieldBuscar.getText();
-        Boolean encontrado = false;
+        Nodo nodo = simplificado.buscar(nombre);
         
-        //Búsqueda """binaria""" (secuencial)
-        while(true) {
-            if(nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
-                encontrado = true;
-                break;
-            }
-            if(nodo == simplificado.ultimo) { //Si no lo encuentra
-                break;
-            }
-            nodo = nodo.getSiguiente();
-        }
-        
-        if(!encontrado) {
+        if(nodo == null) { //No encontrado
             JOptionPane.showMessageDialog(null, "No encontrado");
             return;
         }

@@ -29,7 +29,7 @@ public class Simplificado extends javax.swing.JFrame {
         
         
     }  
-    
+    /*
     public void textoNombre(String nombre) {
         this.textoNombre.setText(nombre);
     }
@@ -45,11 +45,16 @@ public class Simplificado extends javax.swing.JFrame {
     public void textoDescripcion(String Descripcion) {
         this.textoDescripcion.setText(Descripcion);
     }
-   /* 
+    
     public void setImagen(Icon imagen) {
         this.setImagen.setIcon(imagen);
     }
     */
+    
+    public void etiquetaNombreVariable(String nombre) {
+        this.etiquetaNombreVariable.setText(nombre);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -145,21 +150,6 @@ public class Simplificado extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         textoDescripcion = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        etiquetaNombre2 = new javax.swing.JLabel();
-        etiquetaFecha2 = new javax.swing.JLabel();
-        etiquetaEmoticon2 = new javax.swing.JLabel();
-        etiquetaDescripcion2 = new javax.swing.JLabel();
-        etiquetaPreviewImage1 = new javax.swing.JLabel();
-        textoNombre1 = new javax.swing.JTextField();
-        textoFecha1 = new javax.swing.JTextField();
-        textoEmoticon1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        textoDescripcion1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
 
         jLabelDate.setText("FECHA");
 
@@ -678,93 +668,6 @@ public class Simplificado extends javax.swing.JFrame {
 
         TabPanel.addTab("Agregar", jPanelAD);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        etiquetaNombre2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaNombre2.setText("Nombre:");
-        jPanel3.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
-
-        etiquetaFecha2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaFecha2.setText("Fecha:");
-        jPanel3.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
-
-        etiquetaEmoticon2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaEmoticon2.setText("Emoticón:");
-        jPanel3.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
-
-        etiquetaDescripcion2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaDescripcion2.setText("Descripción:");
-        jPanel3.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
-
-        etiquetaPreviewImage1.setBackground(new java.awt.Color(0, 0, 0));
-        etiquetaPreviewImage1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaPreviewImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiquetaPreviewImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(etiquetaPreviewImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
-
-        textoNombre1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoNombre1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoNombre1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(textoNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
-
-        textoFecha1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoFecha1.setForeground(new java.awt.Color(204, 204, 204));
-        textoFecha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoFecha1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(textoFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
-
-        textoEmoticon1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoEmoticon1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoEmoticon1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(textoEmoticon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 45, -1));
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel8.setText("Galería vacía");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, -1, -1));
-
-        textoDescripcion1.setColumns(1);
-        textoDescripcion1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoDescripcion1.setRows(5);
-        jScrollPane4.setViewportView(textoDescripcion1);
-
-        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
-
-        jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel6.setText("Editar Imagen");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, 40));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
-        );
-
-        TabPanel.addTab("Editar", jPanel1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -773,7 +676,7 @@ public class Simplificado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
         );
 
         pack();
@@ -938,19 +841,28 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeleccionarImagenActionPerformed
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
-        Eliminar eliminar = new Eliminar();
-        eliminar.setVisible(true);
-        eliminar.setTitle("Eliminar"); // Establecer el título
-        eliminar.setDefaultCloseOperation(Eliminar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
-        eliminar.setResizable(false); // Evita que la ventana sea redimensionable
+        if(!etiquetaNombreVariable.getText().equals("")) {
+            Eliminar eliminar = new Eliminar();
+            eliminar.setVisible(true);
+            eliminar.setTitle("Eliminar"); // Establecer el título
+            eliminar.setDefaultCloseOperation(Eliminar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+            eliminar.setResizable(false); // Evita que la ventana sea redimensionable
+        } else {
+            JOptionPane.showMessageDialog(null, "Primero añada una imagen");
+        }
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        Buscar buscar = new Buscar(this);
-        buscar.setVisible(true);
-        buscar.setTitle("Buscar"); // Establecer el título
-        buscar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
-        buscar.setResizable(false); // Evita que la ventana sea redimensionable
+        if(!etiquetaNombreVariable.getText().equals("")) {
+            Buscar buscar = new Buscar(this);
+            buscar.setVisible(true);
+            buscar.setTitle("Buscar"); // Establecer el título
+            buscar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+            buscar.setResizable(false); // Evita que la ventana sea redimensionable
+        } else {
+            JOptionPane.showMessageDialog(null, "Primero añada una imagen");
+        }
+        
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
@@ -993,50 +905,16 @@ public class Simplificado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonDerechaActionPerformed
 
-    private void textoNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombre1ActionPerformed
-        
-    }//GEN-LAST:event_textoNombre1ActionPerformed
-
-    private void textoFecha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFecha1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoFecha1ActionPerformed
-
-    private void textoEmoticon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmoticon1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoEmoticon1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(aux != null) {
-            aux.setNombre(textoNombre1.getText());
-            aux.setFecha(textoFecha1.getText());
-            aux.setEmoticon(textoEmoticon1.getText());
-            aux.setDescripcion(textoDescripcion1.getText());
-            mostrarDatos();
-
-            TabPanel.setSelectedIndex(0); //Moverse a la pestaña "Diario"
-        }
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
-        
-        
         if(!etiquetaNombreVariable.getText().equals("")){
-            Editar editar = new Editar();
+            Editar editar = new Editar(aux, this);
         
-        editar.setTitle("Editar"); // Establecer el título
-        editar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
-        editar.setResizable(false); // Evita que la ventana sea redimensionable
-        
+            editar.setTitle("Editar"); // Establecer el título
+            editar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+            editar.setResizable(false); // Evita que la ventana sea redimensionable
             editar.setVisible(true);
-            editar.textoNombreEditar(aux.getNombre());
-            editar.textoFechaEditar(aux.getFecha());
-            editar.textoEmoticonEditar(aux.getEmoticon());
-            editar.textoDescripcionEditar(aux.getDescripcion());
-        //mostrarImagen(editar.etiquetaPreviewImageEditar);
             
-            //editar.mostrarImagen(etiquetaPreviewImageEditar);
+            
         } else {
             JOptionPane.showMessageDialog(null, "Primero añada una imagen");
         }
@@ -1065,7 +943,7 @@ public class Simplificado extends javax.swing.JFrame {
         Nodo auxiliar = primero;
         boolean ciclo = true;
         while (ciclo) {
-            if (nombre == auxiliar.getNombre()) {
+            if (nombre.equals(auxiliar.getNombre())) {
                 auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
                 JOptionPane.showMessageDialog(null, "El Nodo se elimino!!!");
                 ciclo = false;
@@ -1105,8 +983,22 @@ public class Simplificado extends javax.swing.JFrame {
         return fotoLabel;
     }
     
+    public Nodo buscar(String nombre) {
+        Nodo nodo = primero;
+        
+        //Búsqueda """binaria""" (secuencial)
+        while(true) {
+            if(nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
+                return nodo;
+            }
+            if(nodo == ultimo) { //Si no lo encuentra
+                return null;
+            }
+            nodo = nodo.getSiguiente();
+        }
+    }
     
-       void mostrarDatos(){
+    void mostrarDatos(){
         directionTmp = aux.getFoto();
         etiquetaNombreVariable.setText(aux.getNombre());
         etiquetaFechaVariable.setText(aux.getFecha());
@@ -1115,7 +1007,7 @@ public class Simplificado extends javax.swing.JFrame {
         mostrarImagen(etiquetaImagen);
         
         
-       }
+    }
 
     /**
      * @param args the command line arguments
@@ -1163,28 +1055,22 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JButton botonSeleccionarImagen;
     private javax.swing.JLabel etiquetaDescripcion;
     private javax.swing.JLabel etiquetaDescripcion1;
-    private javax.swing.JLabel etiquetaDescripcion2;
     private javax.swing.JTextArea etiquetaDescripcionVariable;
     private javax.swing.JLabel etiquetaDescripcionVariable1;
     private javax.swing.JLabel etiquetaEmoticon;
     private javax.swing.JLabel etiquetaEmoticon1;
-    private javax.swing.JLabel etiquetaEmoticon2;
     private javax.swing.JLabel etiquetaEmoticonVariable;
     private javax.swing.JLabel etiquetaEmoticonVariable1;
     private javax.swing.JLabel etiquetaFecha;
     private javax.swing.JLabel etiquetaFecha1;
-    private javax.swing.JLabel etiquetaFecha2;
     private javax.swing.JLabel etiquetaFechaVariable;
     private javax.swing.JLabel etiquetaFechaVariable1;
     private javax.swing.JLabel etiquetaImagen;
     private javax.swing.JLabel etiquetaNombre;
     private javax.swing.JLabel etiquetaNombre1;
-    private javax.swing.JLabel etiquetaNombre2;
     private javax.swing.JLabel etiquetaNombreVariable;
     private javax.swing.JLabel etiquetaNombreVariable1;
     private javax.swing.JLabel etiquetaPreviewImage;
-    private javax.swing.JLabel etiquetaPreviewImage1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonChoise;
     private javax.swing.JButton jButtonDelate;
     private javax.swing.JButton jButtonGuardar;
@@ -1200,34 +1086,25 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelDate1;
     private javax.swing.JLabel jLabelImage1;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelName1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelAD;
     private javax.swing.JPanel jPanelInicio;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextAreaDescription;
     private javax.swing.JTextField jTextFieldDate;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JLabel previewLabel;
     private javax.swing.JTextArea textoDescripcion;
-    private javax.swing.JTextArea textoDescripcion1;
     private javax.swing.JTextField textoEmoticon;
-    private javax.swing.JTextField textoEmoticon1;
     private javax.swing.JTextField textoFecha;
-    private javax.swing.JTextField textoFecha1;
     private javax.swing.JTextField textoNombre;
-    private javax.swing.JTextField textoNombre1;
     // End of variables declaration//GEN-END:variables
 }

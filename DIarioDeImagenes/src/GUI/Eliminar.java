@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.Nodo;
 import javax.swing.JOptionPane;
 
 /**
@@ -7,11 +8,12 @@ import javax.swing.JOptionPane;
  * @author mdean
  */
 public class Eliminar extends javax.swing.JFrame {
+    private Simplificado simplificado;
     
     public Eliminar() {
         initComponents();
         setLocationRelativeTo(null); //Centrar la ventana
-        
+        this.simplificado = simplificado;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,11 +65,20 @@ public class Eliminar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         if(textFieldEliminar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
         }
+        String nombre = textFieldEliminar.getText();
+        Nodo nodo = simplificado.buscar(nombre);
+        simplificado.eliminarDato(nombre);
         
+        if(nodo == null) { //No encontrado
+            JOptionPane.showMessageDialog(null, "No encontrado");
+            return;
+        }
+        
+        simplificado.aux = nodo;
+        simplificado.mostrarDatos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

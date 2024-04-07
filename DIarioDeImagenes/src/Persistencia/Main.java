@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package Persistencia;
 
 import GUI.Simplificado;
@@ -9,10 +5,6 @@ import com.formdev.flatlaf.*;
 
 import javax.swing.UIManager;
 
-/**
- *
- * @author 19dia
- */
 public class Main {
 
     public static void main(String[] args) {

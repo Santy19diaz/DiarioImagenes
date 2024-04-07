@@ -10,107 +10,169 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+
 /**
  *
  * @author 19dia
  */
 
 public class Simplificado extends javax.swing.JFrame {
-    int id = 1;
+    
     String directionTmp;//captar direction temporal de la imagen
     JFileChooser explorador = new JFileChooser();//explorador de archivos
     Nodo primero,ultimo,aux;
     
-
+    
     public Simplificado() {
         initComponents();
+        
+        
+        
     }
-
-   
+    
+    public void textoNombre(String nombre) {
+        this.textoNombre.setText(nombre);
+    }
+    
+    public void textoFecha(String fecha) {
+        this.textoFecha.setText(fecha);
+    }
+    
+    public void textoEmoticon(String emoticon) {
+        this.textoEmoticon.setText(emoticon);
+    }
+    
+    public void textoDescripcion(String Descripcion) {
+        this.textoDescripcion.setText(Descripcion);
+    }
+   /* 
+    public void setImagen(Icon imagen) {
+        this.setImagen.setIcon(imagen);
+    }
+    */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TabPanel = new javax.swing.JTabbedPane();
-        jPanelInicio = new javax.swing.JPanel();
         jLabelDate = new javax.swing.JLabel();
         FECHA = new javax.swing.JTextField();
-        NOMBRE = new javax.swing.JTextField();
         jLabelName = new javax.swing.JLabel();
+        NOMBRE = new javax.swing.JTextField();
         jButtonSerch = new javax.swing.JButton();
-        jButtonNext = new javax.swing.JButton();
-        jButtonGoToEnd = new javax.swing.JButton();
-        jLabelImage = new javax.swing.JLabel();
-        jButtonBack = new javax.swing.JButton();
-        jButtonGoToFirst = new javax.swing.JButton();
         jButtonDelate = new javax.swing.JButton();
         jButtonNew = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDescription = new javax.swing.JTextArea();
-        jPanelAD = new javax.swing.JPanel();
-        jButtonChoise = new javax.swing.JButton();
-        jTextFieldDate = new javax.swing.JTextField();
-        jButtonGuardar = new javax.swing.JButton();
-        jTextFieldName = new javax.swing.JTextField();
-        jLabelDate1 = new javax.swing.JLabel();
         jLabelName1 = new javax.swing.JLabel();
+        jTextFieldName = new javax.swing.JTextField();
+        jTextFieldDate = new javax.swing.JTextField();
+        jLabelDate1 = new javax.swing.JLabel();
+        jButtonChoise = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
         previewLabel = new javax.swing.JLabel();
-        jPanelBuscar = new javax.swing.JPanel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MyImageDiary");
-        setPreferredSize(new java.awt.Dimension(498, 580));
-        setResizable(false);
-        setSize(new java.awt.Dimension(478, 580));
-
-        TabPanel.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-
-        jPanelInicio.setMinimumSize(new java.awt.Dimension(100, 540));
-        jPanelInicio.setPreferredSize(new java.awt.Dimension(498, 540));
+        jLabel3 = new javax.swing.JLabel();
+        jLabelImage1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        etiquetaNombreVariable1 = new javax.swing.JLabel();
+        etiquetaFechaVariable1 = new javax.swing.JLabel();
+        etiquetaEmoticonVariable1 = new javax.swing.JLabel();
+        etiquetaDescripcionVariable1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        botonAgregar1 = new javax.swing.JButton();
+        botonEliminar2 = new javax.swing.JButton();
+        botonBuscar1 = new javax.swing.JButton();
+        botonEliminar3 = new javax.swing.JButton();
+        botonAgregar3 = new javax.swing.JButton();
+        botonBuscar4 = new javax.swing.JButton();
+        botonEliminar8 = new javax.swing.JButton();
+        botonAgregar4 = new javax.swing.JButton();
+        botonEliminar9 = new javax.swing.JButton();
+        botonBuscar2 = new javax.swing.JButton();
+        botonEliminar14 = new javax.swing.JButton();
+        botonAgregar7 = new javax.swing.JButton();
+        botonAgregar8 = new javax.swing.JButton();
+        botonBuscar8 = new javax.swing.JButton();
+        botonEliminar16 = new javax.swing.JButton();
+        botonEliminar17 = new javax.swing.JButton();
+        botonEliminar10 = new javax.swing.JButton();
+        botonBuscar5 = new javax.swing.JButton();
+        botonEliminar11 = new javax.swing.JButton();
+        botonAgregar5 = new javax.swing.JButton();
+        botonEliminar12 = new javax.swing.JButton();
+        botonBuscar6 = new javax.swing.JButton();
+        botonEliminar13 = new javax.swing.JButton();
+        botonAgregar6 = new javax.swing.JButton();
+        TabPanel = new javax.swing.JTabbedPane();
+        jPanelInicio = new javax.swing.JPanel();
+        botonDerecha = new javax.swing.JButton();
+        BotonFinal = new javax.swing.JButton();
+        etiquetaImagen = new javax.swing.JLabel();
+        botonIzquierda = new javax.swing.JButton();
+        BotonInicio = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        etiquetaNombre = new javax.swing.JLabel();
+        etiquetaFecha = new javax.swing.JLabel();
+        etiquetaEmoticon = new javax.swing.JLabel();
+        etiquetaDescripcion = new javax.swing.JLabel();
+        etiquetaFechaVariable = new javax.swing.JLabel();
+        etiquetaNombreVariable = new javax.swing.JLabel();
+        etiquetaEmoticonVariable = new javax.swing.JLabel();
+        botonAgregar = new javax.swing.JButton();
+        botonBuscar = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        etiquetaDescripcionVariable = new javax.swing.JTextArea();
+        botonEditar = new javax.swing.JButton();
+        jPanelAD = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        etiquetaNombre1 = new javax.swing.JLabel();
+        etiquetaFecha1 = new javax.swing.JLabel();
+        etiquetaEmoticon1 = new javax.swing.JLabel();
+        etiquetaDescripcion1 = new javax.swing.JLabel();
+        botonSeleccionarImagen = new javax.swing.JButton();
+        etiquetaPreviewImage = new javax.swing.JLabel();
+        botonGuardar = new javax.swing.JButton();
+        textoNombre = new javax.swing.JTextField();
+        textoFecha = new javax.swing.JTextField();
+        textoEmoticon = new javax.swing.JTextField();
+        botonDiario = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textoDescripcion = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        etiquetaNombre2 = new javax.swing.JLabel();
+        etiquetaFecha2 = new javax.swing.JLabel();
+        etiquetaEmoticon2 = new javax.swing.JLabel();
+        etiquetaDescripcion2 = new javax.swing.JLabel();
+        etiquetaPreviewImage1 = new javax.swing.JLabel();
+        textoNombre1 = new javax.swing.JTextField();
+        textoFecha1 = new javax.swing.JTextField();
+        textoEmoticon1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        textoDescripcion1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabelDate.setText("FECHA");
 
         FECHA.setEditable(false);
 
-        NOMBRE.setEditable(false);
-
         jLabelName.setText("NOMBRE");
+
+        NOMBRE.setEditable(false);
 
         jButtonSerch.setText("Buscar");
         jButtonSerch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSerchActionPerformed(evt);
-            }
-        });
-
-        jButtonNext.setText(">");
-        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNextActionPerformed(evt);
-            }
-        });
-
-        jButtonGoToEnd.setText("Ir final");
-        jButtonGoToEnd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGoToEndActionPerformed(evt);
-            }
-        });
-
-        jLabelImage.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelImage.setText("IMAGE");
-
-        jButtonBack.setText("<");
-        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBackActionPerformed(evt);
-            }
-        });
-
-        jButtonGoToFirst.setText("Ir inico");
-        jButtonGoToFirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGoToFirstActionPerformed(evt);
             }
         });
 
@@ -127,85 +189,11 @@ public class Simplificado extends javax.swing.JFrame {
         jTextAreaDescription.setRows(5);
         jScrollPane1.setViewportView(jTextAreaDescription);
 
-        javax.swing.GroupLayout jPanelInicioLayout = new javax.swing.GroupLayout(jPanelInicio);
-        jPanelInicio.setLayout(jPanelInicioLayout);
-        jPanelInicioLayout.setHorizontalGroup(
-            jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelInicioLayout.createSequentialGroup()
-                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonSerch)
-                            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButtonGoToFirst)
-                                    .addComponent(jButtonBack))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanelInicioLayout.createSequentialGroup()
-                                        .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButtonNext)
-                                            .addComponent(jButtonGoToEnd))))))
-                        .addGap(0, 18, Short.MAX_VALUE))
-                    .addGroup(jPanelInicioLayout.createSequentialGroup()
-                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                                .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                                .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonDelate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonNew)
-                .addGap(30, 30, 30))
-        );
-        jPanelInicioLayout.setVerticalGroup(
-            jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicioLayout.createSequentialGroup()
-                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelInicioLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonSerch)
-                            .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NOMBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelInicioLayout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addComponent(jButtonGoToEnd))
-                            .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonNext)
-                                .addComponent(jButtonBack)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelInicioLayout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jButtonGoToFirst)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonNew)
-                    .addComponent(jButtonDelate))
-                .addGap(20, 20, 20))
-        );
+        jLabelName1.setText("Nombre de imagen:");
 
-        TabPanel.addTab("Diario", jPanelInicio);
+        jTextFieldDate.setText("DD/MM/YY");
 
-        jPanelAD.setPreferredSize(new java.awt.Dimension(498, 540));
+        jLabelDate1.setText("Fecha de la imagen:");
 
         jButtonChoise.setText("Seleccionar imagen");
         jButtonChoise.addActionListener(new java.awt.event.ActionListener() {
@@ -214,8 +202,6 @@ public class Simplificado extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldDate.setText("DD/MM/YY");
-
         jButtonGuardar.setText("Guardar");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,78 +209,571 @@ public class Simplificado extends javax.swing.JFrame {
             }
         });
 
-        jLabelDate1.setText("Fecha de la imagen:");
-
-        jLabelName1.setText("Nombre de imagen:");
-
         previewLabel.setBackground(new java.awt.Color(0, 0, 0));
         previewLabel.setText("PREVIEW");
+
+        jLabel3.setText("jLabel3");
+
+        jLabelImage1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelImage1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabelImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelImage1.setText("Galería Vacía");
+        jLabelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel4.setText("jLabel4");
+
+        jLabel5.setText("jLabel5");
+
+        etiquetaNombreVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaNombreVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        etiquetaFechaVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaFechaVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        etiquetaEmoticonVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaEmoticonVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        etiquetaDescripcionVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaDescripcionVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel10.setText("jLabel10");
+
+        jLabel11.setText("jLabel11");
+
+        jLabel12.setText("jLabel12");
+
+        jLabel13.setText("jLabel13");
+
+        botonAgregar1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar1.setText("Agregar");
+        botonAgregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar1ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar2.setText("Ordenar");
+        botonEliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar2ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar1.setText("Buscar");
+        botonBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar1ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar3.setText("Eliminar");
+        botonEliminar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar3ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar3.setText("Agregar");
+        botonAgregar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar3ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar4.setText("Buscar");
+        botonBuscar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar4ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar8.setText("Ordenar");
+        botonEliminar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar8ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar4.setText("Agregar");
+        botonAgregar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar4ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar9.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar9.setText("Eliminar");
+        botonEliminar9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar9ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar2.setText("Buscar");
+        botonBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar2ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar14.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar14.setText("Ordenar");
+        botonEliminar14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar14ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar7.setText("Agregar");
+        botonAgregar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar7ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar8.setText("Agregar");
+        botonAgregar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar8ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar8.setText("Buscar");
+        botonBuscar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar8ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar16.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar16.setText("Ordenar");
+        botonEliminar16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar16ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar17.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar17.setText("Eliminar");
+        botonEliminar17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar17ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar10.setText("Ordenar");
+        botonEliminar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar10ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar5.setText("Buscar");
+        botonBuscar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar5ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar11.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar11.setText("Eliminar");
+        botonEliminar11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar11ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar5.setText("Agregar");
+        botonAgregar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar5ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar12.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar12.setText("Ordenar");
+        botonEliminar12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar12ActionPerformed(evt);
+            }
+        });
+
+        botonBuscar6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar6.setText("Buscar");
+        botonBuscar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscar6ActionPerformed(evt);
+            }
+        });
+
+        botonEliminar13.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar13.setText("Eliminar");
+        botonEliminar13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminar13ActionPerformed(evt);
+            }
+        });
+
+        botonAgregar6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar6.setText("Agregar");
+        botonAgregar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregar6ActionPerformed(evt);
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MyImageDiary");
+        setResizable(false);
+        setSize(new java.awt.Dimension(478, 580));
+
+        TabPanel.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+
+        jPanelInicio.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelInicio.setMinimumSize(new java.awt.Dimension(100, 540));
+        jPanelInicio.setPreferredSize(new java.awt.Dimension(498, 540));
+        jPanelInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        botonDerecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonDerecha.setText(">");
+        botonDerecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDerechaActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 410, -1, -1));
+
+        BotonFinal.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        BotonFinal.setText(">>");
+        BotonFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonFinalActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(BotonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 70, -1));
+
+        etiquetaImagen.setBackground(new java.awt.Color(0, 0, 0));
+        etiquetaImagen.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelInicio.add(etiquetaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
+
+        botonIzquierda.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonIzquierda.setText("<");
+        botonIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIzquierdaActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
+
+        BotonInicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        BotonInicio.setText("<<");
+        BotonInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInicioActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 70, -1));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setText("Diario de Imágenes");
+        jPanelInicio.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, -1, -1));
+
+        etiquetaNombre.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaNombre.setText("Nombre:");
+        jPanelInicio.add(etiquetaNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        etiquetaFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaFecha.setText("Fecha:");
+        jPanelInicio.add(etiquetaFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+
+        etiquetaEmoticon.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaEmoticon.setText("Emoticón:");
+        jPanelInicio.add(etiquetaEmoticon, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+
+        etiquetaDescripcion.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaDescripcion.setText("Descripción:");
+        jPanelInicio.add(etiquetaDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        etiquetaFechaVariable.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaFechaVariable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelInicio.add(etiquetaFechaVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 140, 30));
+
+        etiquetaNombreVariable.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaNombreVariable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelInicio.add(etiquetaNombreVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 210, 30));
+
+        etiquetaEmoticonVariable.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaEmoticonVariable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelInicio.add(etiquetaEmoticonVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 45, 30));
+
+        botonAgregar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonAgregar.setText("Agregar");
+        botonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
+
+        botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar.setText("Buscar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 120, -1));
+
+        botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar.setText("Eliminar");
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel15.setText("Galería vacía");
+        jPanelInicio.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, -1, -1));
+
+        etiquetaDescripcionVariable.setEditable(false);
+        etiquetaDescripcionVariable.setColumns(0);
+        etiquetaDescripcionVariable.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaDescripcionVariable.setRows(5);
+        jScrollPane3.setViewportView(etiquetaDescripcionVariable);
+
+        jPanelInicio.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
+
+        botonEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEditar.setText("Editar");
+        botonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEditarActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, 120, -1));
+
+        TabPanel.addTab("Diario", jPanelInicio);
+
+        jPanelAD.setPreferredSize(new java.awt.Dimension(498, 540));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel2.setText("Agregar Imagen");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 280, -1));
+
+        etiquetaNombre1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaNombre1.setText("Nombre:");
+        jPanel2.add(etiquetaNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        etiquetaFecha1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaFecha1.setText("Fecha:");
+        jPanel2.add(etiquetaFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+
+        etiquetaEmoticon1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaEmoticon1.setText("Emoticón:");
+        jPanel2.add(etiquetaEmoticon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+
+        etiquetaDescripcion1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaDescripcion1.setText("Descripción:");
+        jPanel2.add(etiquetaDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        botonSeleccionarImagen.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonSeleccionarImagen.setText("Seleccionar imagen");
+        botonSeleccionarImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSeleccionarImagenActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botonSeleccionarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, -1, -1));
+
+        etiquetaPreviewImage.setBackground(new java.awt.Color(0, 0, 0));
+        etiquetaPreviewImage.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaPreviewImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaPreviewImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(etiquetaPreviewImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
+
+        botonGuardar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonGuardar.setText("Guardar");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+
+        textoNombre.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoNombreActionPerformed(evt);
+            }
+        });
+        jPanel2.add(textoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
+
+        textoFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoFechaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(textoFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
+
+        textoEmoticon.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoEmoticon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoEmoticonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(textoEmoticon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 45, -1));
+
+        botonDiario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonDiario.setText("Diario");
+        botonDiario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDiarioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botonDiario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, 120, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel7.setText("Seleccione una imagen");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
+
+        textoDescripcion.setColumns(1);
+        textoDescripcion.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoDescripcion.setRows(5);
+        jScrollPane2.setViewportView(textoDescripcion);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
 
         javax.swing.GroupLayout jPanelADLayout = new javax.swing.GroupLayout(jPanelAD);
         jPanelAD.setLayout(jPanelADLayout);
         jPanelADLayout.setHorizontalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelADLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addGroup(jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelADLayout.createSequentialGroup()
-                        .addComponent(jButtonChoise)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonGuardar))
-                    .addComponent(jLabelName1)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelDate1)
-                    .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelADLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(previewLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelADLayout.setVerticalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelADLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabelName1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelDate1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(previewLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonChoise)
-                    .addComponent(jButtonGuardar))
-                .addGap(62, 62, 62))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
 
         TabPanel.addTab("Agregar", jPanelAD);
 
-        javax.swing.GroupLayout jPanelBuscarLayout = new javax.swing.GroupLayout(jPanelBuscar);
-        jPanelBuscar.setLayout(jPanelBuscarLayout);
-        jPanelBuscarLayout.setHorizontalGroup(
-            jPanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        etiquetaNombre2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaNombre2.setText("Nombre:");
+        jPanel3.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        etiquetaFecha2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaFecha2.setText("Fecha:");
+        jPanel3.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+
+        etiquetaEmoticon2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaEmoticon2.setText("Emoticón:");
+        jPanel3.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+
+        etiquetaDescripcion2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaDescripcion2.setText("Descripción:");
+        jPanel3.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        etiquetaPreviewImage1.setBackground(new java.awt.Color(0, 0, 0));
+        etiquetaPreviewImage1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        etiquetaPreviewImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaPreviewImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(etiquetaPreviewImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
+
+        textoNombre1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoNombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoNombre1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(textoNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
+
+        textoFecha1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoFecha1.setForeground(new java.awt.Color(204, 204, 204));
+        textoFecha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoFecha1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(textoFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
+
+        textoEmoticon1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoEmoticon1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoEmoticon1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(textoEmoticon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 45, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel8.setText("Galería vacía");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, -1, -1));
+
+        textoDescripcion1.setColumns(1);
+        textoDescripcion1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoDescripcion1.setRows(5);
+        jScrollPane4.setViewportView(textoDescripcion1);
+
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
+
+        jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel6.setText("Editar Imagen");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, 40));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanelBuscarLayout.setVerticalGroup(
-            jPanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
 
-        TabPanel.addTab("Buscar", jPanelBuscar);
+        TabPanel.addTab("Editar", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1097, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -312,50 +791,259 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonChoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChoiseActionPerformed
-        captarImagen();
-        mostrarImagen(previewLabel);
+
 
     }//GEN-LAST:event_jButtonChoiseActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        Insertar(id, jTextFieldDate.getText(), jTextFieldName.getText(), directionTmp);
-        previewLabel.setIcon(null);
-        jTextFieldDate.setText("DD/MM/YY");
-        jTextFieldName.setText("");
-
+       
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
-    private void jButtonGoToFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToFirstActionPerformed
-        aux = primero;
-        mostrarDatos();
-    }//GEN-LAST:event_jButtonGoToFirstActionPerformed
+    private void botonEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar2ActionPerformed
 
-    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
-        aux = aux.getSiguiente();
+    private void botonBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar1ActionPerformed
+
+    private void botonEliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar3ActionPerformed
+
+    private void botonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar1ActionPerformed
+
+    private void botonBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar2ActionPerformed
+
+    private void botonAgregar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar3ActionPerformed
+
+    private void botonEliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar8ActionPerformed
+
+    private void botonBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar4ActionPerformed
+
+    private void botonEliminar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar9ActionPerformed
+
+    private void botonAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar4ActionPerformed
+
+    private void botonEliminar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar10ActionPerformed
+
+    private void botonBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar5ActionPerformed
+
+    private void botonEliminar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar11ActionPerformed
+
+    private void botonAgregar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar5ActionPerformed
+
+    private void botonEliminar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar12ActionPerformed
+
+    private void botonBuscar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar6ActionPerformed
+
+    private void botonEliminar13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar13ActionPerformed
+
+    private void botonAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar6ActionPerformed
+
+    private void botonEliminar14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar14ActionPerformed
+
+    private void botonAgregar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar7ActionPerformed
+
+    private void botonEliminar16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar16ActionPerformed
+
+    private void botonBuscar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscar8ActionPerformed
+
+    private void botonEliminar17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminar17ActionPerformed
+
+    private void botonAgregar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar8ActionPerformed
+
+    private void botonDiarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDiarioActionPerformed
+        TabPanel.setSelectedIndex(0); //Moverse a la pestaña "Diario"
+    }//GEN-LAST:event_botonDiarioActionPerformed
+
+    private void textoEmoticonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmoticonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoEmoticonActionPerformed
+
+    private void textoFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFechaActionPerformed
+
+    }//GEN-LAST:event_textoFechaActionPerformed
+
+    private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed
+
+    }//GEN-LAST:event_textoNombreActionPerformed
+
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+        if((textoNombre.getText().equals("")) && (etiquetaPreviewImage.getIcon() == null)) {
+            JOptionPane.showMessageDialog(null, "Ingrese una imagen y un nombre");
+        } else if(etiquetaPreviewImage.getIcon() == null){
+            JOptionPane.showMessageDialog(null, "Agregue una imagen");
+        } else if(textoNombre.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Agregue un nombre");
+        } else {
+            Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+            etiquetaPreviewImage.setIcon(null);
+            textoNombre.setText("");
+            textoFecha.setText("");
+            textoEmoticon.setText("");
+            textoDescripcion.setText("");
+
+            //Mostrar la última imagen ingresada:
+            aux = ultimo;
+            mostrarDatos();
+        }
+    }//GEN-LAST:event_botonGuardarActionPerformed
+
+    private void botonSeleccionarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeleccionarImagenActionPerformed
+        captarImagen();
+        mostrarImagen(etiquetaPreviewImage);
+    }//GEN-LAST:event_botonSeleccionarImagenActionPerformed
+
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        Eliminar eliminar = new Eliminar();
+        eliminar.setVisible(true);
+        eliminar.setTitle("Eliminar"); // Establecer el título
+        eliminar.setDefaultCloseOperation(Eliminar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+        eliminar.setResizable(false); // Evita que la ventana sea redimensionable
+    }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        Buscar buscar = new Buscar();
+        buscar.setVisible(true);
+        buscar.setTitle("Buscar"); // Establecer el título
+        buscar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+        buscar.setResizable(false); // Evita que la ventana sea redimensionable
+    }//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        TabPanel.setSelectedIndex(1); //Moverse a la pestaña "Agregar"
+    }//GEN-LAST:event_botonAgregarActionPerformed
+
+    private void BotonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioActionPerformed
         if (aux == null) {
-            JOptionPane.showMessageDialog(null, "por eso joven");
-            }else{
-                mostrarDatos();
-            }
+            JOptionPane.showMessageDialog(null, "La lista está vacía.");
+        } else {
+            aux = primero;
+            mostrarDatos();
+        }
+    }//GEN-LAST:event_BotonInicioActionPerformed
+
+    private void botonIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIzquierdaActionPerformed
+        if (aux == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía.");
+        } else {
+            aux = aux.getAnterior();
+            mostrarDatos();
+        }
+    }//GEN-LAST:event_botonIzquierdaActionPerformed
+
+    private void BotonFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalActionPerformed
+        if (aux == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía.");
+        } else {
+            aux = ultimo;
+            mostrarDatos();
+        }
+    }//GEN-LAST:event_BotonFinalActionPerformed
+
+    private void botonDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDerechaActionPerformed
+        if (aux == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía.");
+        } else {
+            aux = aux.getSiguiente();
+            mostrarDatos();
+        }
+    }//GEN-LAST:event_botonDerechaActionPerformed
+
+    private void textoNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombre1ActionPerformed
         
-    }//GEN-LAST:event_jButtonNextActionPerformed
+    }//GEN-LAST:event_textoNombre1ActionPerformed
 
-    private void jButtonGoToEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoToEndActionPerformed
-        aux = ultimo;
-        mostrarDatos();
-    }//GEN-LAST:event_jButtonGoToEndActionPerformed
+    private void textoFecha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFecha1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoFecha1ActionPerformed
 
-    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        aux = aux.getAnterior();
-        if (aux == null) {
-            JOptionPane.showMessageDialog(null, "por eso joven");
-            }else{
-                mostrarDatos();
-            }
-    }//GEN-LAST:event_jButtonBackActionPerformed
+    private void textoEmoticon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmoticon1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoEmoticon1ActionPerformed
 
-    public void Insertar(int id, String fecha, String nombre, String foto) {
-        Nodo auxiliar = new Nodo(id, fecha, nombre, foto, null, null);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(aux != null) {
+            aux.setNombre(textoNombre1.getText());
+            aux.setFecha(textoFecha1.getText());
+            aux.setEmoticon(textoEmoticon1.getText());
+            aux.setDescripcion(textoDescripcion1.getText());
+            mostrarDatos();
+
+            TabPanel.setSelectedIndex(0); //Moverse a la pestaña "Diario"
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
+        
+        
+        if(!etiquetaNombreVariable.getText().equals("")){
+            Editar editar = new Editar();
+        
+        editar.setTitle("Editar"); // Establecer el título
+        editar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
+        editar.setResizable(false); // Evita que la ventana sea redimensionable
+        
+            editar.setVisible(true);
+            editar.textoNombreEditar(aux.getNombre());
+            editar.textoFechaEditar(aux.getFecha());
+            editar.textoEmoticonEditar(aux.getEmoticon());
+            editar.textoDescripcionEditar(aux.getDescripcion());
+        //mostrarImagen(editar.etiquetaPreviewImageEditar);
+            
+            //editar.mostrarImagen(etiquetaPreviewImageEditar);
+        } else {
+            JOptionPane.showMessageDialog(null, "Primero añada una imagen");
+        }
+    }//GEN-LAST:event_botonEditarActionPerformed
+
+    public void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
+        Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
         if (ultimo == null) {
 
             ultimo = auxiliar;
@@ -373,11 +1061,11 @@ public class Simplificado extends javax.swing.JFrame {
 
     }
 
-    public void eliminarDato(int id) {//con eliminar el ID del nodo, se elimina toda la información
+    public void eliminarDato(String nombre) {//con eliminar el nombre del nodo, se elimina toda la información
         Nodo auxiliar = primero;
         boolean ciclo = true;
         while (ciclo) {
-            if (id == auxiliar.getId()) {
+            if (nombre == auxiliar.getNombre()) {
                 auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
                 JOptionPane.showMessageDialog(null, "El Nodo se elimino!!!");
                 ciclo = false;
@@ -417,11 +1105,16 @@ public class Simplificado extends javax.swing.JFrame {
         return fotoLabel;
     }
     
+    
        void mostrarDatos(){
         directionTmp = aux.getFoto();
-        NOMBRE.setText(aux.getNombre());
-        FECHA.setText(aux.getFecha());
-        mostrarImagen(jLabelImage);
+        etiquetaNombreVariable.setText(aux.getNombre());
+        etiquetaFechaVariable.setText(aux.getFecha());
+        etiquetaEmoticonVariable.setText(aux.getEmoticon());
+        etiquetaDescripcionVariable.setText(aux.getDescripcion());
+        mostrarImagen(etiquetaImagen);
+        
+        
        }
 
     /**
@@ -430,30 +1123,111 @@ public class Simplificado extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonFinal;
+    private javax.swing.JButton BotonInicio;
     private javax.swing.JTextField FECHA;
     private javax.swing.JTextField NOMBRE;
     private javax.swing.JTabbedPane TabPanel;
-    private javax.swing.JButton jButtonBack;
+    private javax.swing.JButton botonAgregar;
+    private javax.swing.JButton botonAgregar1;
+    private javax.swing.JButton botonAgregar3;
+    private javax.swing.JButton botonAgregar4;
+    private javax.swing.JButton botonAgregar5;
+    private javax.swing.JButton botonAgregar6;
+    private javax.swing.JButton botonAgregar7;
+    private javax.swing.JButton botonAgregar8;
+    private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonBuscar1;
+    private javax.swing.JButton botonBuscar2;
+    private javax.swing.JButton botonBuscar4;
+    private javax.swing.JButton botonBuscar5;
+    private javax.swing.JButton botonBuscar6;
+    private javax.swing.JButton botonBuscar8;
+    private javax.swing.JButton botonDerecha;
+    private javax.swing.JButton botonDiario;
+    private javax.swing.JButton botonEditar;
+    private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonEliminar10;
+    private javax.swing.JButton botonEliminar11;
+    private javax.swing.JButton botonEliminar12;
+    private javax.swing.JButton botonEliminar13;
+    private javax.swing.JButton botonEliminar14;
+    private javax.swing.JButton botonEliminar16;
+    private javax.swing.JButton botonEliminar17;
+    private javax.swing.JButton botonEliminar2;
+    private javax.swing.JButton botonEliminar3;
+    private javax.swing.JButton botonEliminar8;
+    private javax.swing.JButton botonEliminar9;
+    private javax.swing.JButton botonGuardar;
+    private javax.swing.JButton botonIzquierda;
+    private javax.swing.JButton botonSeleccionarImagen;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaDescripcion1;
+    private javax.swing.JLabel etiquetaDescripcion2;
+    private javax.swing.JTextArea etiquetaDescripcionVariable;
+    private javax.swing.JLabel etiquetaDescripcionVariable1;
+    private javax.swing.JLabel etiquetaEmoticon;
+    private javax.swing.JLabel etiquetaEmoticon1;
+    private javax.swing.JLabel etiquetaEmoticon2;
+    private javax.swing.JLabel etiquetaEmoticonVariable;
+    private javax.swing.JLabel etiquetaEmoticonVariable1;
+    private javax.swing.JLabel etiquetaFecha;
+    private javax.swing.JLabel etiquetaFecha1;
+    private javax.swing.JLabel etiquetaFecha2;
+    private javax.swing.JLabel etiquetaFechaVariable;
+    private javax.swing.JLabel etiquetaFechaVariable1;
+    private javax.swing.JLabel etiquetaImagen;
+    private javax.swing.JLabel etiquetaNombre;
+    private javax.swing.JLabel etiquetaNombre1;
+    private javax.swing.JLabel etiquetaNombre2;
+    private javax.swing.JLabel etiquetaNombreVariable;
+    private javax.swing.JLabel etiquetaNombreVariable1;
+    private javax.swing.JLabel etiquetaPreviewImage;
+    private javax.swing.JLabel etiquetaPreviewImage1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonChoise;
     private javax.swing.JButton jButtonDelate;
-    private javax.swing.JButton jButtonGoToEnd;
-    private javax.swing.JButton jButtonGoToFirst;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JButton jButtonNew;
-    private javax.swing.JButton jButtonNext;
     private javax.swing.JButton jButtonSerch;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelDate1;
-    private javax.swing.JLabel jLabelImage;
+    private javax.swing.JLabel jLabelImage1;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelName1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelAD;
-    private javax.swing.JPanel jPanelBuscar;
     private javax.swing.JPanel jPanelInicio;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextAreaDescription;
     private javax.swing.JTextField jTextFieldDate;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JLabel previewLabel;
+    private javax.swing.JTextArea textoDescripcion;
+    private javax.swing.JTextArea textoDescripcion1;
+    private javax.swing.JTextField textoEmoticon;
+    private javax.swing.JTextField textoEmoticon1;
+    private javax.swing.JTextField textoFecha;
+    private javax.swing.JTextField textoFecha1;
+    private javax.swing.JTextField textoNombre;
+    private javax.swing.JTextField textoNombre1;
     // End of variables declaration//GEN-END:variables
 }

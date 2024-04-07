@@ -842,7 +842,7 @@ public class Simplificado extends javax.swing.JFrame {
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
         if(!etiquetaNombreVariable.getText().equals("")) {
-            Eliminar eliminar = new Eliminar();
+            Eliminar eliminar = new Eliminar(this);
             eliminar.setVisible(true);
             eliminar.setTitle("Eliminar"); // Establecer el título
             eliminar.setDefaultCloseOperation(Eliminar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
@@ -940,19 +940,39 @@ public class Simplificado extends javax.swing.JFrame {
     }
 
     public void eliminarDato(String nombre) {//con eliminar el nombre del nodo, se elimina toda la información
-        Nodo auxiliar = primero;
-        boolean ciclo = true;
-        while (ciclo) {
-            if (nombre.equals(auxiliar.getNombre())) {
-                auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
-                JOptionPane.showMessageDialog(null, "El Nodo se elimino!!!");
-                ciclo = false;
-            } else if (auxiliar.getSiguiente() == ultimo) {
-                JOptionPane.showMessageDialog(null, "El dato no existe!!!");
-                ciclo = false;
+        Nodo auxiliar = buscar(nombre);
+        if(auxiliar == null) {
+            JOptionPane.showMessageDialog(null, "El dato no existe");
+            return;
+        }
+        
+        if (nombre.equals(auxiliar.getNombre())) {
+            if(auxiliar == primero && auxiliar == ultimo) {
+                primero = null;
+                ultimo = null;
+                auxiliar = null;
+                aux = null;
+            } else if(auxiliar == primero) {
+                primero = auxiliar.getSiguiente();
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
+                aux = auxiliar.getSiguiente();
+                mostrarDatos();
+            } else if (auxiliar == ultimo) {
+                ultimo = auxiliar.getAnterior();
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
+                aux = auxiliar.getSiguiente();
+                mostrarDatos();
             } else {
-                auxiliar = auxiliar.getSiguiente();
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
+                aux = auxiliar.getSiguiente();
+                mostrarDatos();
             }
+                
+            JOptionPane.showMessageDialog(null, "El nodo se eliminó");
+                
         }
     }
 

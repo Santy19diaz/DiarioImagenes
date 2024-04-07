@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class Eliminar extends javax.swing.JFrame {
     private Simplificado simplificado;
     
-    public Eliminar() {
+    public Eliminar(Simplificado simplificado) {
         initComponents();
         setLocationRelativeTo(null); //Centrar la ventana
         this.simplificado = simplificado;
@@ -27,7 +27,7 @@ public class Eliminar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         textFieldEliminar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,14 +41,14 @@ public class Eliminar extends javax.swing.JFrame {
         textFieldEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jPanel1.add(textFieldEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton1.setText("Eliminar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonEliminar.setText("Eliminar");
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
+        jPanel1.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,60 +64,28 @@ public class Eliminar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
         if(textFieldEliminar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
         }
         String nombre = textFieldEliminar.getText();
         Nodo nodo = simplificado.buscar(nombre);
-        simplificado.eliminarDato(nombre);
+        
         
         if(nodo == null) { //No encontrado
             JOptionPane.showMessageDialog(null, "No encontrado");
             return;
         }
         
-        simplificado.aux = nodo;
-        simplificado.mostrarDatos();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        simplificado.eliminarDato(nombre);
+        
+        //simplificado.aux = nodo;
+        //simplificado.mostrarDatos();
+    }//GEN-LAST:event_botonEliminarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Eliminar().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textFieldEliminar;

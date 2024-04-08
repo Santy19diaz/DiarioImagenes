@@ -798,16 +798,41 @@ public class Simplificado extends javax.swing.JFrame {
         } else if(textoNombre.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Agregue un nombre");
         } else {
-            Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
-            etiquetaPreviewImage.setIcon(null);
-            textoNombre.setText("");
-            textoFecha.setText("");
-            textoEmoticon.setText("");
-            textoDescripcion.setText("");
+            Nodo nodo = primero;
+            if(nodo != null) {
+                //Búsqueda """binaria""" (secuencial)
+                while(true) {
+                    if(nodo.getNombre().equals(textoNombre.getText())) { //Si sí lo encuentra
+                        JOptionPane.showMessageDialog(null, "Ingrese un nombre diferente");
+                        return;
+                    }
+                    if(nodo == ultimo) { //Si no lo encuentra
+                        Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+                        etiquetaPreviewImage.setIcon(null);
+                        textoNombre.setText("");
+                        textoFecha.setText("");
+                        textoEmoticon.setText("");
+                        textoDescripcion.setText("");
 
-            //Mostrar la última imagen ingresada:
-            aux = ultimo;
-            mostrarDatos();
+                        //Mostrar la última imagen ingresada:
+                        aux = ultimo;
+                        mostrarDatos();
+                        return;
+                    }
+                    nodo = nodo.getSiguiente();
+                }
+            } else {
+                Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+                etiquetaPreviewImage.setIcon(null);
+                textoNombre.setText("");
+                textoFecha.setText("");
+                textoEmoticon.setText("");
+                textoDescripcion.setText("");
+
+                //Mostrar la última imagen ingresada:
+                aux = ultimo;
+                mostrarDatos();
+            }
         }
     }//GEN-LAST:event_botonGuardarActionPerformed
 

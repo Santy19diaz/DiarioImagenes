@@ -102,25 +102,25 @@ public class Editar extends javax.swing.JFrame {
 
         etiquetaNombre2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaNombre2.setText("Nombre:");
-        jPanel2.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        jPanel2.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
         etiquetaFecha2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaFecha2.setText("Fecha:");
-        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         etiquetaEmoticon2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaEmoticon2.setText("Emoticón:");
-        jPanel2.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+        jPanel2.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
         etiquetaDescripcion2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaDescripcion2.setText("Descripción:");
-        jPanel2.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+        jPanel2.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
 
         etiquetaPreviewImageEditar.setBackground(new java.awt.Color(0, 0, 0));
         etiquetaPreviewImageEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaPreviewImageEditar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaPreviewImageEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(etiquetaPreviewImageEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
+        jPanel2.add(etiquetaPreviewImageEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 410, 410));
 
         textoNombreEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoNombreEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -128,16 +128,15 @@ public class Editar extends javax.swing.JFrame {
                 textoNombreEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(textoNombreEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
+        jPanel2.add(textoNombreEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 210, -1));
 
         textoFechaEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoFechaEditar.setForeground(new java.awt.Color(204, 204, 204));
         textoFechaEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoFechaEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(textoFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
+        jPanel2.add(textoFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 140, -1));
 
         textoEmoticonEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoEmoticonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -145,22 +144,22 @@ public class Editar extends javax.swing.JFrame {
                 textoEmoticonEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(textoEmoticonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 45, -1));
+        jPanel2.add(textoEmoticonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 45, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel8.setText("Galería vacía");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
 
         textoDescripcionEditar.setColumns(1);
         textoDescripcionEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoDescripcionEditar.setRows(5);
         jScrollPane4.setViewportView(textoDescripcionEditar);
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 310, 190));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel6.setText("Editar Imagen");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, 40));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, 40));
 
         guardarEdicion.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         guardarEdicion.setText("Guardar");
@@ -169,9 +168,9 @@ public class Editar extends javax.swing.JFrame {
                 guardarEdicionActionPerformed(evt);
             }
         });
-        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 690, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 720));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,6 +188,8 @@ public class Editar extends javax.swing.JFrame {
     }//GEN-LAST:event_textoEmoticonEditarActionPerformed
 
     private void guardarEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEdicionActionPerformed
+        setVisible(false); // Con esto la ventana "Editar" deja de ser visible
+        
         nodo.setNombre(textoNombreEditar.getText());
         nodo.setFecha(textoFechaEditar.getText());
         nodo.setEmoticon(textoEmoticonEditar.getText());

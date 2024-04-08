@@ -65,6 +65,8 @@ public class Eliminar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        setVisible(false); // Con esto la ventana "Eliminar" deja de ser visible
+        
         if(textFieldEliminar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
         }
@@ -77,9 +79,8 @@ public class Eliminar extends javax.swing.JFrame {
             return;
         }
         
-        textFieldEliminar.setText("");
-        
         simplificado.eliminarDato(nombre);
+        
     }//GEN-LAST:event_botonEliminarActionPerformed
 
 

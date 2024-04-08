@@ -29,7 +29,7 @@ public class Buscar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         textFieldBuscar = new javax.swing.JTextField();
-        jButtonSerch = new javax.swing.JButton();
+        botonBuscar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,14 +42,14 @@ public class Buscar extends javax.swing.JFrame {
         textFieldBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         getContentPane().add(textFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
 
-        jButtonSerch.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButtonSerch.setText("Buscar");
-        jButtonSerch.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonBuscar.setText("Buscar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSerchActionPerformed(evt);
+                botonBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSerch, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+        getContentPane().add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -69,7 +69,9 @@ public class Buscar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void jButtonSerchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSerchActionPerformed
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        setVisible(false); // Con esto la ventana "Eliminar" deja de ser visible
+        
         if(textFieldBuscar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
             return;
@@ -84,10 +86,10 @@ public class Buscar extends javax.swing.JFrame {
         
         simplificado.aux = nodo;
         simplificado.mostrarDatos();
-    }//GEN-LAST:event_jButtonSerchActionPerformed
+    }//GEN-LAST:event_botonBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonSerch;
+    private javax.swing.JButton botonBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textFieldBuscar;

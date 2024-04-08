@@ -77,6 +77,8 @@ public class Eliminar extends javax.swing.JFrame {
             return;
         }
         
+        textFieldEliminar.setText("");
+        
         simplificado.eliminarDato(nombre);
     }//GEN-LAST:event_botonEliminarActionPerformed
 

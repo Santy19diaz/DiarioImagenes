@@ -26,8 +26,6 @@ public class Simplificado extends javax.swing.JFrame {
     public Simplificado() {
         initComponents();
         
-        
-        
     }  
     public void etiquetaNombreVariable(String nombre) {
         this.etiquetaNombreVariable.setText(nombre);
@@ -925,18 +923,26 @@ public class Simplificado extends javax.swing.JFrame {
         }
         
         if (nombre.equals(auxiliar.getNombre())) {
-            if(auxiliar == primero && auxiliar == ultimo) {
+            if(auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
                 primero = null;
                 ultimo = null;
                 auxiliar = null;
                 aux = null;
-            } else if(auxiliar == primero) {
+                
+                //Vaciar los textField:
+                etiquetaImagen.setIcon(null);
+                etiquetaNombreVariable.setText("");
+                etiquetaFechaVariable.setText("");
+                etiquetaEmoticonVariable.setText("");
+                etiquetaDescripcionVariable.setText("");
+                
+            } else if(auxiliar == primero) { // Caso en que se elimina el primer elemento:
                 primero = auxiliar.getSiguiente();
                 auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
                 auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
                 aux = auxiliar.getSiguiente();
                 mostrarDatos();
-            } else if (auxiliar == ultimo) {
+            } else if (auxiliar == ultimo) { // Caso en que se elimina el último elemento:
                 ultimo = auxiliar.getAnterior();
                 auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
                 auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
@@ -1006,10 +1012,6 @@ public class Simplificado extends javax.swing.JFrame {
         
         
     }
-
-    /**
-     * @param args the command line arguments
-     */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

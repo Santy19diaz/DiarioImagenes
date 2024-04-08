@@ -29,28 +29,6 @@ public class Simplificado extends javax.swing.JFrame {
         
         
     }  
-    /*
-    public void textoNombre(String nombre) {
-        this.textoNombre.setText(nombre);
-    }
-    
-    public void textoFecha(String fecha) {
-        this.textoFecha.setText(fecha);
-    }
-    
-    public void textoEmoticon(String emoticon) {
-        this.textoEmoticon.setText(emoticon);
-    }
-    
-    public void textoDescripcion(String Descripcion) {
-        this.textoDescripcion.setText(Descripcion);
-    }
-    
-    public void setImagen(Icon imagen) {
-        this.setImagen.setIcon(imagen);
-    }
-    */
-    
     public void etiquetaNombreVariable(String nombre) {
         this.etiquetaNombreVariable.setText(nombre);
     }

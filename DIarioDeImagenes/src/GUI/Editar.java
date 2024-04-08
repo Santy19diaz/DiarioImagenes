@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
-import Logica.Metodos;
 import Logica.Nodo;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -34,7 +29,6 @@ public class Editar extends javax.swing.JFrame {
         textoEmoticonEditar(nodo.getEmoticon());
         textoDescripcionEditar(nodo.getDescripcion());
         mostrarImagen(etiquetaPreviewImageEditar);
-        //editar.setImagenPreview(aux.getFoto());
     }
 
     

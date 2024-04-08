@@ -78,9 +78,6 @@ public class Eliminar extends javax.swing.JFrame {
         }
         
         simplificado.eliminarDato(nombre);
-        
-        //simplificado.aux = nodo;
-        //simplificado.mostrarDatos();
     }//GEN-LAST:event_botonEliminarActionPerformed
 
 

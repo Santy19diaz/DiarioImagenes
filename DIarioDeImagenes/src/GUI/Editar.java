@@ -199,9 +199,6 @@ public class Editar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_guardarEdicionActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel etiquetaDescripcion2;

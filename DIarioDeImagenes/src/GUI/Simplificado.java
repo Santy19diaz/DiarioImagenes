@@ -585,7 +585,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+        jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, -1, -1));
 
         textoNombre.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -792,7 +792,7 @@ public class Simplificado extends javax.swing.JFrame {
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         if((textoNombre.getText().equals("")) && (etiquetaPreviewImage.getIcon() == null)) {
-            JOptionPane.showMessageDialog(null, "Ingrese una imagen y un nombre");
+            JOptionPane.showMessageDialog(null, "Ingrese al menos una imagen y un nombre");
         } else if(etiquetaPreviewImage.getIcon() == null){
             JOptionPane.showMessageDialog(null, "Agregue una imagen");
         } else if(textoNombre.getText().equals("")) {
@@ -807,32 +807,22 @@ public class Simplificado extends javax.swing.JFrame {
                         return;
                     }
                     if(nodo == ultimo) { //Si no lo encuentra
-                        Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
-                        etiquetaPreviewImage.setIcon(null);
-                        textoNombre.setText("");
-                        textoFecha.setText("");
-                        textoEmoticon.setText("");
-                        textoDescripcion.setText("");
-
-                        //Mostrar la última imagen ingresada:
-                        aux = ultimo;
-                        mostrarDatos();
-                        return;
+                        break;
                     }
                     nodo = nodo.getSiguiente();
                 }
-            } else {
-                Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
-                etiquetaPreviewImage.setIcon(null);
-                textoNombre.setText("");
-                textoFecha.setText("");
-                textoEmoticon.setText("");
-                textoDescripcion.setText("");
-
-                //Mostrar la última imagen ingresada:
-                aux = ultimo;
-                mostrarDatos();
             }
+            Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+            etiquetaPreviewImage.setIcon(null);
+            textoNombre.setText("");
+            textoFecha.setText("");
+            textoEmoticon.setText("");
+            textoDescripcion.setText("");
+
+            //Mostrar la última imagen ingresada:
+            aux = ultimo;
+            mostrarDatos();
+            
         }
     }//GEN-LAST:event_botonGuardarActionPerformed
 

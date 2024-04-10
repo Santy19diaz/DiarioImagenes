@@ -25,7 +25,7 @@ public class Editar extends javax.swing.JFrame {
         this.nodo = nodo;
         
         textoNombreEditar(nodo.getNombre());
-        textoFechaEditar(nodo.getFecha());
+        formatedFechaEditar(nodo.getFecha());
         textoEmoticonEditar(nodo.getEmoticon());
         textoDescripcionEditar(nodo.getDescripcion());
         mostrarImagen(etiquetaPreviewImageEditar);
@@ -55,8 +55,8 @@ public class Editar extends javax.swing.JFrame {
         this.textoNombreEditar.setText(nombre);
     }
     
-    public void textoFechaEditar(String fecha) {
-        this.textoFechaEditar.setText(fecha);
+    public void formatedFechaEditar(String fecha) {
+        this.formatedFechaEditar.setText(fecha);
     }
     
     public void textoEmoticonEditar(String emoticon) {
@@ -83,13 +83,13 @@ public class Editar extends javax.swing.JFrame {
         etiquetaDescripcion2 = new javax.swing.JLabel();
         etiquetaPreviewImageEditar = new javax.swing.JLabel();
         textoNombreEditar = new javax.swing.JTextField();
-        textoFechaEditar = new javax.swing.JTextField();
         textoEmoticonEditar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         textoDescripcionEditar = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         guardarEdicion = new javax.swing.JButton();
+        formatedFechaEditar = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,8 +105,8 @@ public class Editar extends javax.swing.JFrame {
         jPanel2.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
         etiquetaFecha2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaFecha2.setText("Fecha:");
-        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+        etiquetaFecha2.setText("Fecha (d/m/yy):");
+        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         etiquetaEmoticon2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaEmoticon2.setText("Emoticón:");
@@ -129,14 +129,6 @@ public class Editar extends javax.swing.JFrame {
             }
         });
         jPanel2.add(textoNombreEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 210, -1));
-
-        textoFechaEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoFechaEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoFechaEditarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(textoFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 140, -1));
 
         textoEmoticonEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoEmoticonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +162,9 @@ public class Editar extends javax.swing.JFrame {
         });
         jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 690, -1, -1));
 
+        formatedFechaEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jPanel2.add(formatedFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 140, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 760));
 
         pack();
@@ -179,10 +174,6 @@ public class Editar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textoNombreEditarActionPerformed
 
-    private void textoFechaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFechaEditarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoFechaEditarActionPerformed
-
     private void textoEmoticonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmoticonEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoEmoticonEditarActionPerformed
@@ -191,7 +182,7 @@ public class Editar extends javax.swing.JFrame {
         setVisible(false); // Con esto la ventana "Editar" deja de ser visible
         
         nodo.setNombre(textoNombreEditar.getText());
-        nodo.setFecha(textoFechaEditar.getText());
+        nodo.setFecha(formatedFechaEditar.getText());
         nodo.setEmoticon(textoEmoticonEditar.getText());
         nodo.setDescripcion(textoDescripcionEditar.getText());
         simplificado.mostrarDatos();
@@ -206,6 +197,7 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaFecha2;
     private javax.swing.JLabel etiquetaNombre2;
     private javax.swing.JLabel etiquetaPreviewImageEditar;
+    private javax.swing.JFormattedTextField formatedFechaEditar;
     private javax.swing.JButton guardarEdicion;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -214,7 +206,6 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea textoDescripcionEditar;
     private javax.swing.JTextField textoEmoticonEditar;
-    private javax.swing.JTextField textoFechaEditar;
     private javax.swing.JTextField textoNombreEditar;
     // End of variables declaration//GEN-END:variables
 }

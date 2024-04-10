@@ -120,12 +120,12 @@ public class Simplificado extends javax.swing.JFrame {
         etiquetaPreviewImage = new javax.swing.JLabel();
         botonGuardar = new javax.swing.JButton();
         textoNombre = new javax.swing.JTextField();
-        textoFecha = new javax.swing.JTextField();
         textoEmoticon = new javax.swing.JTextField();
         botonDiario = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         textoDescripcion = new javax.swing.JTextArea();
+        formatedFecha = new javax.swing.JFormattedTextField();
 
         jLabelDate.setText("FECHA");
 
@@ -552,8 +552,8 @@ public class Simplificado extends javax.swing.JFrame {
         jPanel2.add(etiquetaNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         etiquetaFecha1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaFecha1.setText("Fecha:");
-        jPanel2.add(etiquetaFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+        etiquetaFecha1.setText("Fecha (d/m/yy):");
+        jPanel2.add(etiquetaFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         etiquetaEmoticon1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaEmoticon1.setText("Emoticón:");
@@ -595,14 +595,6 @@ public class Simplificado extends javax.swing.JFrame {
         });
         jPanel2.add(textoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
 
-        textoFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoFechaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(textoFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
-
         textoEmoticon.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoEmoticon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -630,6 +622,10 @@ public class Simplificado extends javax.swing.JFrame {
         jScrollPane2.setViewportView(textoDescripcion);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
+
+        formatedFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        formatedFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jPanel2.add(formatedFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
 
         javax.swing.GroupLayout jPanelADLayout = new javax.swing.GroupLayout(jPanelAD);
         jPanelAD.setLayout(jPanelADLayout);
@@ -782,10 +778,6 @@ public class Simplificado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoEmoticonActionPerformed
 
-    private void textoFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFechaActionPerformed
-
-    }//GEN-LAST:event_textoFechaActionPerformed
-
     private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed
 
     }//GEN-LAST:event_textoNombreActionPerformed
@@ -812,10 +804,10 @@ public class Simplificado extends javax.swing.JFrame {
                     nodo = nodo.getSiguiente();
                 }
             }
-            Insertar(textoNombre.getText(), textoFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+            Insertar(textoNombre.getText(), formatedFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
             etiquetaPreviewImage.setIcon(null);
             textoNombre.setText("");
-            textoFecha.setText("");
+            formatedFecha.setText("");
             textoEmoticon.setText("");
             textoDescripcion.setText("");
 
@@ -1086,6 +1078,7 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaNombreVariable;
     private javax.swing.JLabel etiquetaNombreVariable1;
     private javax.swing.JLabel etiquetaPreviewImage;
+    private javax.swing.JFormattedTextField formatedFecha;
     private javax.swing.JButton jButtonChoise;
     private javax.swing.JButton jButtonDelate;
     private javax.swing.JButton jButtonGuardar;
@@ -1119,7 +1112,6 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JLabel previewLabel;
     private javax.swing.JTextArea textoDescripcion;
     private javax.swing.JTextField textoEmoticon;
-    private javax.swing.JTextField textoFecha;
     private javax.swing.JTextField textoNombre;
     // End of variables declaration//GEN-END:variables
 }

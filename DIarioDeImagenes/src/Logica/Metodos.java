@@ -12,8 +12,8 @@ public class Metodos {
     static JFileChooser explorador = new JFileChooser();//explorador de archivos
     static Nodo primero,ultimo;
    
-    public static void Insertar(int id, String fecha, String nombre,String foto){
-        Nodo auxiliar = new Nodo(id,fecha,nombre,foto,null,null);
+    public static void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto){
+        Nodo auxiliar = new Nodo(nombre,fecha, emoticon, descripcion, foto,null,null);
         if(ultimo==null){
 
             ultimo = auxiliar;
@@ -30,16 +30,16 @@ public class Metodos {
         }
 
     }
-    public void eliminarDato(int id){//con eliminar el ID del nodo, se elimina toda la información
+    public void eliminarDato(String nombre){//con eliminar el Nombre del nodo, se elimina toda la información
         Nodo auxiliar=primero;
         boolean ciclo = true;
         while(ciclo){
-            if(id == auxiliar.getId()){
+            if(nombre == auxiliar.getNombre()){
                 auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
-                JOptionPane.showMessageDialog(null,"El Nodo se elimino!!!");
+                JOptionPane.showMessageDialog(null,"El Nodo se eliminó!");
                 ciclo = false;
             }else if (auxiliar.getSiguiente()==ultimo){
-                JOptionPane.showMessageDialog(null,"El dato no existe!!!");
+                JOptionPane.showMessageDialog(null,"El dato no existe!");
                 ciclo = false;
             }else{
                 auxiliar = auxiliar.getSiguiente();
@@ -70,6 +70,8 @@ public class Metodos {
         }
         return fotoLabel;
     }
+    
+    
 
     public static String getDirectionTmp() {
         return directionTmp;

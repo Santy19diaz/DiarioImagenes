@@ -5,32 +5,36 @@ import java.awt.Image;
 import java.io.File;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
 /**
  *
  * @author 19dia
  */
-
 public class Simplificado extends javax.swing.JFrame {
-    
+
     String directionTmp;//captar direction temporal de la imagen
     JFileChooser explorador = new JFileChooser();//explorador de archivos
-    Nodo primero,ultimo,aux;
-    
-    
+    Nodo primero, ultimo, aux;
+
     public Simplificado() {
         initComponents();
-        
-    }  
+        botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
+        botonEditar.setIcon(setIcono("/iconos/edit.png",botonEditar));
+        botonOrdenar.setIcon(setIcono("/iconos/check.png", botonOrdenar));
+        botonBuscar.setIcon(setIcono("/iconos/buscar.png", botonBuscar));
+        botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
+
+    }
+
     public void etiquetaNombreVariable(String nombre) {
         this.etiquetaNombreVariable.setText(nombre);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,46 +51,14 @@ public class Simplificado extends javax.swing.JFrame {
         jLabelName1 = new javax.swing.JLabel();
         jTextFieldName = new javax.swing.JTextField();
         jTextFieldDate = new javax.swing.JTextField();
-        jLabelDate1 = new javax.swing.JLabel();
         jButtonChoise = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         previewLabel = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabelImage1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         etiquetaNombreVariable1 = new javax.swing.JLabel();
         etiquetaFechaVariable1 = new javax.swing.JLabel();
         etiquetaEmoticonVariable1 = new javax.swing.JLabel();
         etiquetaDescripcionVariable1 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        botonAgregar1 = new javax.swing.JButton();
-        botonEliminar2 = new javax.swing.JButton();
-        botonBuscar1 = new javax.swing.JButton();
-        botonEliminar3 = new javax.swing.JButton();
-        botonAgregar3 = new javax.swing.JButton();
-        botonBuscar4 = new javax.swing.JButton();
-        botonEliminar8 = new javax.swing.JButton();
-        botonAgregar4 = new javax.swing.JButton();
-        botonEliminar9 = new javax.swing.JButton();
-        botonBuscar2 = new javax.swing.JButton();
-        botonEliminar14 = new javax.swing.JButton();
-        botonAgregar7 = new javax.swing.JButton();
-        botonAgregar8 = new javax.swing.JButton();
-        botonBuscar8 = new javax.swing.JButton();
-        botonEliminar16 = new javax.swing.JButton();
-        botonEliminar17 = new javax.swing.JButton();
-        botonEliminar10 = new javax.swing.JButton();
-        botonBuscar5 = new javax.swing.JButton();
-        botonEliminar11 = new javax.swing.JButton();
-        botonAgregar5 = new javax.swing.JButton();
-        botonEliminar12 = new javax.swing.JButton();
-        botonBuscar6 = new javax.swing.JButton();
-        botonEliminar13 = new javax.swing.JButton();
-        botonAgregar6 = new javax.swing.JButton();
         TabPanel = new javax.swing.JTabbedPane();
         jPanelInicio = new javax.swing.JPanel();
         botonDerecha = new javax.swing.JButton();
@@ -160,8 +132,6 @@ public class Simplificado extends javax.swing.JFrame {
 
         jTextFieldDate.setText("DD/MM/YY");
 
-        jLabelDate1.setText("Fecha de la imagen:");
-
         jButtonChoise.setText("Seleccionar imagen");
         jButtonChoise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,17 +149,11 @@ public class Simplificado extends javax.swing.JFrame {
         previewLabel.setBackground(new java.awt.Color(0, 0, 0));
         previewLabel.setText("PREVIEW");
 
-        jLabel3.setText("jLabel3");
-
         jLabelImage1.setBackground(new java.awt.Color(0, 0, 0));
         jLabelImage1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabelImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelImage1.setText("Galería Vacía");
         jLabelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel4.setText("jLabel4");
-
-        jLabel5.setText("jLabel5");
 
         etiquetaNombreVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaNombreVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -202,206 +166,6 @@ public class Simplificado extends javax.swing.JFrame {
 
         etiquetaDescripcionVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaDescripcionVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel10.setText("jLabel10");
-
-        jLabel11.setText("jLabel11");
-
-        jLabel12.setText("jLabel12");
-
-        jLabel13.setText("jLabel13");
-
-        botonAgregar1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar1.setText("Agregar");
-        botonAgregar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar1ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar2.setText("Ordenar");
-        botonEliminar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar2ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar1.setText("Buscar");
-        botonBuscar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar1ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar3.setText("Eliminar");
-        botonEliminar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar3ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar3.setText("Agregar");
-        botonAgregar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar3ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar4.setText("Buscar");
-        botonBuscar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar4ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar8.setText("Ordenar");
-        botonEliminar8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar8ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar4.setText("Agregar");
-        botonAgregar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar4ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar9.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar9.setText("Eliminar");
-        botonEliminar9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar9ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar2.setText("Buscar");
-        botonBuscar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar2ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar14.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar14.setText("Ordenar");
-        botonEliminar14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar14ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar7.setText("Agregar");
-        botonAgregar7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar7ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar8.setText("Agregar");
-        botonAgregar8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar8ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar8.setText("Buscar");
-        botonBuscar8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar8ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar16.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar16.setText("Ordenar");
-        botonEliminar16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar16ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar17.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar17.setText("Eliminar");
-        botonEliminar17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar17ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar10.setText("Ordenar");
-        botonEliminar10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar10ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar5.setText("Buscar");
-        botonBuscar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar5ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar11.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar11.setText("Eliminar");
-        botonEliminar11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar11ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar5.setText("Agregar");
-        botonAgregar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar5ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar12.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar12.setText("Ordenar");
-        botonEliminar12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar12ActionPerformed(evt);
-            }
-        });
-
-        botonBuscar6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar6.setText("Buscar");
-        botonBuscar6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscar6ActionPerformed(evt);
-            }
-        });
-
-        botonEliminar13.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar13.setText("Eliminar");
-        botonEliminar13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminar13ActionPerformed(evt);
-            }
-        });
-
-        botonAgregar6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar6.setText("Agregar");
-        botonAgregar6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregar6ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyImageDiary");
@@ -449,13 +213,13 @@ public class Simplificado extends javax.swing.JFrame {
         jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
 
         botonOrdenar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonOrdenar.setText("ordenar");
+        botonOrdenar.setBorder(null);
         botonOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonOrdenarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 150, -1));
+        jPanelInicio.add(botonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 640, 95, 95));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Diario de Imágenes");
@@ -490,31 +254,31 @@ public class Simplificado extends javax.swing.JFrame {
         jPanelInicio.add(etiquetaEmoticonVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 45, 30));
 
         botonAgregar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonAgregar.setText("Agregar");
+        botonAgregar.setBorder(null);
         botonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAgregarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
+        jPanelInicio.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, 95, 95));
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar.setText("Buscar");
+        botonBuscar.setBorder(null);
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 660, 120, -1));
+        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 640, 95, 95));
 
         botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar.setText("Eliminar");
+        botonEliminar.setBorder(null);
         botonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+        jPanelInicio.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 640, 95, 95));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel15.setText("Galería vacía");
@@ -529,13 +293,13 @@ public class Simplificado extends javax.swing.JFrame {
         jPanelInicio.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
 
         botonEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEditar.setText("Editar");
+        botonEditar.setBorder(null);
         botonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEditarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 660, 120, -1));
+        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 640, 95, 95));
 
         BotonInicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         BotonInicio.setText("<<");
@@ -650,7 +414,7 @@ public class Simplificado extends javax.swing.JFrame {
         );
         jPanelADLayout.setVerticalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         TabPanel.addTab("Agregar", jPanelAD);
@@ -663,7 +427,7 @@ public class Simplificado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
         );
 
         pack();
@@ -686,104 +450,8 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonChoiseActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-       
+
     }//GEN-LAST:event_jButtonGuardarActionPerformed
-
-    private void botonEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar2ActionPerformed
-
-    private void botonBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar1ActionPerformed
-
-    private void botonEliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar3ActionPerformed
-
-    private void botonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar1ActionPerformed
-
-    private void botonBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar2ActionPerformed
-
-    private void botonAgregar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar3ActionPerformed
-
-    private void botonEliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar8ActionPerformed
-
-    private void botonBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar4ActionPerformed
-
-    private void botonEliminar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar9ActionPerformed
-
-    private void botonAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar4ActionPerformed
-
-    private void botonEliminar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar10ActionPerformed
-
-    private void botonBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar5ActionPerformed
-
-    private void botonEliminar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar11ActionPerformed
-
-    private void botonAgregar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar5ActionPerformed
-
-    private void botonEliminar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar12ActionPerformed
-
-    private void botonBuscar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar6ActionPerformed
-
-    private void botonEliminar13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar13ActionPerformed
-
-    private void botonAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar6ActionPerformed
-
-    private void botonEliminar14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar14ActionPerformed
-
-    private void botonAgregar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar7ActionPerformed
-
-    private void botonEliminar16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar16ActionPerformed
-
-    private void botonBuscar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscar8ActionPerformed
-
-    private void botonEliminar17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminar17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminar17ActionPerformed
-
-    private void botonAgregar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregar8ActionPerformed
 
     private void botonDiarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDiarioActionPerformed
         TabPanel.setSelectedIndex(0); //Moverse a la pestaña "Diario"
@@ -798,22 +466,22 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_textoNombreActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
-        if((textoNombre.getText().equals("")) && (etiquetaPreviewImage.getIcon() == null)) {
+        if ((textoNombre.getText().equals("")) && (etiquetaPreviewImage.getIcon() == null)) {
             JOptionPane.showMessageDialog(null, "Ingrese al menos una imagen y un nombre");
-        } else if(etiquetaPreviewImage.getIcon() == null){
+        } else if (etiquetaPreviewImage.getIcon() == null) {
             JOptionPane.showMessageDialog(null, "Agregue una imagen");
-        } else if(textoNombre.getText().equals("")) {
+        } else if (textoNombre.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Agregue un nombre");
         } else {
             Nodo nodo = primero;
-            if(nodo != null) {
+            if (nodo != null) {
                 //Búsqueda """binaria""" (secuencial)
-                while(true) {
-                    if(nodo.getNombre().equals(textoNombre.getText())) { //Si sí lo encuentra
+                while (true) {
+                    if (nodo.getNombre().equals(textoNombre.getText())) { //Si sí lo encuentra
                         JOptionPane.showMessageDialog(null, "Ingrese un nombre diferente");
                         return;
                     }
-                    if(nodo == ultimo) { //Si no lo encuentra
+                    if (nodo == ultimo) { //Si no lo encuentra
                         break;
                     }
                     nodo = nodo.getSiguiente();
@@ -829,7 +497,7 @@ public class Simplificado extends javax.swing.JFrame {
             //Mostrar la última imagen ingresada:
             aux = ultimo;
             mostrarDatos();
-            
+
         }
     }//GEN-LAST:event_botonGuardarActionPerformed
 
@@ -839,7 +507,7 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeleccionarImagenActionPerformed
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
-        if(!etiquetaNombreVariable.getText().equals("")) {
+        if (!etiquetaNombreVariable.getText().equals("")) {
             Eliminar eliminar = new Eliminar(this);
             eliminar.setVisible(true);
             eliminar.setTitle("Eliminar"); // Establecer el título
@@ -851,7 +519,7 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        if(!etiquetaNombreVariable.getText().equals("")) {
+        if (!etiquetaNombreVariable.getText().equals("")) {
             Buscar buscar = new Buscar(this);
             buscar.setVisible(true);
             buscar.setTitle("Buscar"); // Establecer el título
@@ -860,7 +528,7 @@ public class Simplificado extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Primero añada una imagen");
         }
-        
+
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
@@ -904,17 +572,16 @@ public class Simplificado extends javax.swing.JFrame {
             primero.sort(primero);
         }
     }
-    
+
     private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
-        if(!etiquetaNombreVariable.getText().equals("")){
+        if (!etiquetaNombreVariable.getText().equals("")) {
             Editar editar = new Editar(aux, this);
-        
+
             editar.setTitle("Editar"); // Establecer el título
             editar.setDefaultCloseOperation(Buscar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
             editar.setResizable(false); // Evita que la ventana sea redimensionable
             editar.setVisible(true);
-            
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Primero añada una imagen");
         }
@@ -934,45 +601,45 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_formatedFechaActionPerformed
 
     public void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
-    Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
-    if (ultimo == null) {
-        // Caso especial: la lista está vacía
-        ultimo = auxiliar;
-        primero = auxiliar;
-        primero.setAnterior(ultimo);
-        ultimo.setSiguiente(primero);
-    } else {
-        // Caso general: agregar al final de la lista
-        auxiliar.setSiguiente(primero);
-        auxiliar.setAnterior(ultimo);
-        ultimo.setSiguiente(auxiliar);
-        primero.setAnterior(auxiliar);
-        ultimo = auxiliar;
+        Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
+        if (ultimo == null) {
+            // Caso especial: la lista está vacía
+            ultimo = auxiliar;
+            primero = auxiliar;
+            primero.setAnterior(ultimo);
+            ultimo.setSiguiente(primero);
+        } else {
+            // Caso general: agregar al final de la lista
+            auxiliar.setSiguiente(primero);
+            auxiliar.setAnterior(ultimo);
+            ultimo.setSiguiente(auxiliar);
+            primero.setAnterior(auxiliar);
+            ultimo = auxiliar;
+        }
     }
-}
 
     public void eliminarDato(String nombre) {//con eliminar el nombre del nodo, se elimina toda la información
         Nodo auxiliar = buscar(nombre);
-        if(auxiliar == null) {
+        if (auxiliar == null) {
             JOptionPane.showMessageDialog(null, "El dato no existe");
             return;
         }
-        
+
         if (nombre.equals(auxiliar.getNombre())) {
-            if(auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
+            if (auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
                 primero = null;
                 ultimo = null;
                 auxiliar = null;
                 aux = null;
-                
+
                 //Vaciar los textField:
                 etiquetaImagen.setIcon(null);
                 etiquetaNombreVariable.setText("");
                 etiquetaFechaVariable.setText("");
                 etiquetaEmoticonVariable.setText("");
                 etiquetaDescripcionVariable.setText("");
-                
-            } else if(auxiliar == primero) { // Caso en que se elimina el primer elemento:
+
+            } else if (auxiliar == primero) { // Caso en que se elimina el primer elemento:
                 primero = auxiliar.getSiguiente();
                 auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
                 auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
@@ -990,9 +657,9 @@ public class Simplificado extends javax.swing.JFrame {
                 aux = auxiliar.getSiguiente();
                 mostrarDatos();
             }
-                
+
             JOptionPane.showMessageDialog(null, "El nodo se eliminó");
-                
+
         }
     }
 
@@ -1008,6 +675,15 @@ public class Simplificado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
         }
     }
+    
+    public Icon setIcono(String url, JButton bt){
+        ImageIcon icon = new ImageIcon(getClass().getResource(url));
+        int ancho = bt.getWidth();
+        int alto = bt.getHeight();
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho,alto,Image.SCALE_DEFAULT));
+        
+        return icono;
+    }
 
     public JLabel mostrarImagen(JLabel fotoLabel) {/*necesitamos crear un Jlabel donde iran las imágenes,
                                                     debemos pasar ese Jlabel como parámetro para que cambie la imagen*/
@@ -1022,31 +698,30 @@ public class Simplificado extends javax.swing.JFrame {
         }
         return fotoLabel;
     }
-    
+
     public Nodo buscar(String nombre) {
         Nodo nodo = primero;
-        
+
         //Búsqueda """binaria""" (secuencial)
-        while(true) {
-            if(nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
+        while (true) {
+            if (nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
                 return nodo;
             }
-            if(nodo == ultimo) { //Si no lo encuentra
+            if (nodo == ultimo) { //Si no lo encuentra
                 return null;
             }
             nodo = nodo.getSiguiente();
         }
     }
-    
-    void mostrarDatos(){
+
+    void mostrarDatos() {
         directionTmp = aux.getFoto();
         etiquetaNombreVariable.setText(aux.getNombre());
         etiquetaFechaVariable.setText(aux.getFecha());
         etiquetaEmoticonVariable.setText(aux.getEmoticon());
         etiquetaDescripcionVariable.setText(aux.getDescripcion());
         mostrarImagen(etiquetaImagen);
-        
-        
+
     }
     
 
@@ -1057,35 +732,11 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JTextField NOMBRE;
     private javax.swing.JTabbedPane TabPanel;
     private javax.swing.JButton botonAgregar;
-    private javax.swing.JButton botonAgregar1;
-    private javax.swing.JButton botonAgregar3;
-    private javax.swing.JButton botonAgregar4;
-    private javax.swing.JButton botonAgregar5;
-    private javax.swing.JButton botonAgregar6;
-    private javax.swing.JButton botonAgregar7;
-    private javax.swing.JButton botonAgregar8;
     private javax.swing.JButton botonBuscar;
-    private javax.swing.JButton botonBuscar1;
-    private javax.swing.JButton botonBuscar2;
-    private javax.swing.JButton botonBuscar4;
-    private javax.swing.JButton botonBuscar5;
-    private javax.swing.JButton botonBuscar6;
-    private javax.swing.JButton botonBuscar8;
     private javax.swing.JButton botonDerecha;
     private javax.swing.JButton botonDiario;
     private javax.swing.JButton botonEditar;
     private javax.swing.JButton botonEliminar;
-    private javax.swing.JButton botonEliminar10;
-    private javax.swing.JButton botonEliminar11;
-    private javax.swing.JButton botonEliminar12;
-    private javax.swing.JButton botonEliminar13;
-    private javax.swing.JButton botonEliminar14;
-    private javax.swing.JButton botonEliminar16;
-    private javax.swing.JButton botonEliminar17;
-    private javax.swing.JButton botonEliminar2;
-    private javax.swing.JButton botonEliminar3;
-    private javax.swing.JButton botonEliminar8;
-    private javax.swing.JButton botonEliminar9;
     private javax.swing.JButton botonGuardar;
     private javax.swing.JButton botonIzquierda;
     private javax.swing.JButton botonOrdenar;
@@ -1115,18 +766,10 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNew;
     private javax.swing.JButton jButtonSerch;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelDate;
-    private javax.swing.JLabel jLabelDate1;
     private javax.swing.JLabel jLabelImage1;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelName1;

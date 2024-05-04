@@ -93,7 +93,7 @@ public class Simplificado extends javax.swing.JFrame {
         BotonFinal = new javax.swing.JButton();
         etiquetaImagen = new javax.swing.JLabel();
         botonIzquierda = new javax.swing.JButton();
-        BotonInicio = new javax.swing.JButton();
+        botonOrdenar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         etiquetaNombre = new javax.swing.JLabel();
         etiquetaFecha = new javax.swing.JLabel();
@@ -109,6 +109,7 @@ public class Simplificado extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         etiquetaDescripcionVariable = new javax.swing.JTextArea();
         botonEditar = new javax.swing.JButton();
+        BotonInicio = new javax.swing.JButton();
         jPanelAD = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -447,14 +448,14 @@ public class Simplificado extends javax.swing.JFrame {
         });
         jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
 
-        BotonInicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        BotonInicio.setText("<<");
-        BotonInicio.addActionListener(new java.awt.event.ActionListener() {
+        botonOrdenar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        botonOrdenar.setText("ordenar");
+        botonOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInicioActionPerformed(evt);
+                botonOrdenarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 70, -1));
+        jPanelInicio.add(botonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Diario de Imágenes");
@@ -504,7 +505,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonBuscarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 660, 120, -1));
+        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 660, 120, -1));
 
         botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonEliminar.setText("Eliminar");
@@ -534,7 +535,16 @@ public class Simplificado extends javax.swing.JFrame {
                 botonEditarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, 120, -1));
+        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 660, 120, -1));
+
+        BotonInicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        BotonInicio.setText("<<");
+        BotonInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInicioActionPerformed(evt);
+            }
+        });
+        jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 70, -1));
 
         TabPanel.addTab("Diario", jPanelInicio);
 
@@ -623,8 +633,13 @@ public class Simplificado extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 310, 190));
 
-        formatedFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        formatedFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/M/yy"))));
         formatedFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        formatedFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                formatedFechaActionPerformed(evt);
+            }
+        });
         jPanel2.add(formatedFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
 
         javax.swing.GroupLayout jPanelADLayout = new javax.swing.GroupLayout(jPanelAD);
@@ -852,14 +867,10 @@ public class Simplificado extends javax.swing.JFrame {
         TabPanel.setSelectedIndex(1); //Moverse a la pestaña "Agregar"
     }//GEN-LAST:event_botonAgregarActionPerformed
 
-    private void BotonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioActionPerformed
-        if (aux == null) {
-            JOptionPane.showMessageDialog(null, "La lista está vacía.");
-        } else {
-            aux = primero;
-            mostrarDatos();
-        }
-    }//GEN-LAST:event_BotonInicioActionPerformed
+    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
+        ordenarPorFecha();
+        JOptionPane.showMessageDialog(null, "Lista");
+    }//GEN-LAST:event_botonOrdenarActionPerformed
 
     private void botonIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIzquierdaActionPerformed
         if (aux == null) {
@@ -888,6 +899,12 @@ public class Simplificado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonDerechaActionPerformed
 
+    public void ordenarPorFecha() {
+        if (primero != null) {
+            primero.sort(primero);
+        }
+    }
+    
     private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
         if(!etiquetaNombreVariable.getText().equals("")){
             Editar editar = new Editar(aux, this);
@@ -903,24 +920,36 @@ public class Simplificado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonEditarActionPerformed
 
-    public void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
-        Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
-        if (ultimo == null) {
-
-            ultimo = auxiliar;
-            primero = auxiliar;
-            primero.setAnterior(ultimo);
-            ultimo.setSiguiente(primero);
-
+    private void BotonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioActionPerformed
+        if (aux == null) {
+            JOptionPane.showMessageDialog(null, "La lista está vacía.");
         } else {
-            ultimo.setSiguiente(auxiliar);
-            primero.setAnterior(auxiliar);
-            auxiliar.setAnterior(ultimo);
-            auxiliar.setSiguiente(primero);
-            ultimo = auxiliar;
+            aux = primero;
+            mostrarDatos();
         }
+    }//GEN-LAST:event_BotonInicioActionPerformed
 
+    private void formatedFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formatedFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formatedFechaActionPerformed
+
+    public void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
+    Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
+    if (ultimo == null) {
+        // Caso especial: la lista está vacía
+        ultimo = auxiliar;
+        primero = auxiliar;
+        primero.setAnterior(ultimo);
+        ultimo.setSiguiente(primero);
+    } else {
+        // Caso general: agregar al final de la lista
+        auxiliar.setSiguiente(primero);
+        auxiliar.setAnterior(ultimo);
+        ultimo.setSiguiente(auxiliar);
+        primero.setAnterior(auxiliar);
+        ultimo = auxiliar;
     }
+}
 
     public void eliminarDato(String nombre) {//con eliminar el nombre del nodo, se elimina toda la información
         Nodo auxiliar = buscar(nombre);
@@ -1059,6 +1088,7 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JButton botonEliminar9;
     private javax.swing.JButton botonGuardar;
     private javax.swing.JButton botonIzquierda;
+    private javax.swing.JButton botonOrdenar;
     private javax.swing.JButton botonSeleccionarImagen;
     private javax.swing.JLabel etiquetaDescripcion;
     private javax.swing.JLabel etiquetaDescripcion1;

@@ -23,6 +23,8 @@ public class Nodo {
         this.siguiente = siguiente;
         this.anterior = anterior;
     }
+    
+      
 
     //Getters y setters:
 
@@ -80,6 +82,63 @@ public class Nodo {
 
     public void setAnterior(Nodo anterior) {
         this.anterior = anterior;
+    }
+    
+    // Método para intercambiar dos nodos en la lista
+    private void swap(Nodo a, Nodo b) {
+        String tempNombre = a.nombre;
+        String tempFecha = a.fecha;
+        String tempEmoticon = a.emoticon;
+        String tempDescripcion = a.descripcion;
+        String tempFoto = a.foto;
+
+        a.nombre = b.nombre;
+        a.fecha = b.fecha;
+        a.emoticon = b.emoticon;
+        a.descripcion = b.descripcion;
+        a.foto = b.foto;
+
+        b.nombre = tempNombre;
+        b.fecha = tempFecha;
+        b.emoticon = tempEmoticon;
+        b.descripcion = tempDescripcion;
+        b.foto = tempFoto;
+    }
+
+    // Método para realizar el particionado en Quick Sort
+    private Nodo partition(Nodo low, Nodo high) {
+        String pivot = high.fecha;
+        Nodo i = low.anterior;
+
+        for (Nodo j = low; j != high; j = j.siguiente) {
+            if (j.fecha.compareTo(pivot) < 0) {
+                i = (i == null) ? low : i.siguiente;
+                swap(i, j);
+            }
+        }
+
+        i = (i == null) ? low : i.siguiente;
+        swap(i, high);
+        return i;
+    }
+
+    // Método para implementar Quick Sort en la lista
+    private void quickSort(Nodo low, Nodo high) {
+        if (high != null && low != high && low != high.siguiente) {
+            Nodo pivot = partition(low, high);
+
+            quickSort(low, pivot.anterior);
+            quickSort(pivot.siguiente, high);
+        }
+    }
+
+    // Método público para iniciar Quick Sort en la lista
+    public void sort(Nodo head) {
+        Nodo last = head;
+        while (last.siguiente != null) {
+            last = last.siguiente;
+        }
+        quickSort(head, last);
     }
     
 }

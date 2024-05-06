@@ -1,6 +1,7 @@
 package GUI;
 
 import Logica.Nodo;
+import Logica.Metodos;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.Icon;
@@ -19,7 +20,7 @@ public class Simplificado extends javax.swing.JFrame {
 
     String directionTmp;//captar direction temporal de la imagen
     JFileChooser explorador = new JFileChooser();//explorador de archivos
-    Nodo primero, ultimo, aux;
+    Nodo primero = Metodos.primero, ultimo = Metodos.ultimo, aux;
 
     public Simplificado() {
         initComponents();
@@ -39,26 +40,6 @@ public class Simplificado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelDate = new javax.swing.JLabel();
-        FECHA = new javax.swing.JTextField();
-        jLabelName = new javax.swing.JLabel();
-        NOMBRE = new javax.swing.JTextField();
-        jButtonSerch = new javax.swing.JButton();
-        jButtonDelate = new javax.swing.JButton();
-        jButtonNew = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaDescription = new javax.swing.JTextArea();
-        jLabelName1 = new javax.swing.JLabel();
-        jTextFieldName = new javax.swing.JTextField();
-        jTextFieldDate = new javax.swing.JTextField();
-        jButtonChoise = new javax.swing.JButton();
-        jButtonGuardar = new javax.swing.JButton();
-        previewLabel = new javax.swing.JLabel();
-        jLabelImage1 = new javax.swing.JLabel();
-        etiquetaNombreVariable1 = new javax.swing.JLabel();
-        etiquetaFechaVariable1 = new javax.swing.JLabel();
-        etiquetaEmoticonVariable1 = new javax.swing.JLabel();
-        etiquetaDescripcionVariable1 = new javax.swing.JLabel();
         TabPanel = new javax.swing.JTabbedPane();
         jPanelInicio = new javax.swing.JPanel();
         botonDerecha = new javax.swing.JButton();
@@ -100,73 +81,6 @@ public class Simplificado extends javax.swing.JFrame {
         textoDescripcion = new javax.swing.JTextArea();
         formatedFecha = new javax.swing.JFormattedTextField();
 
-        jLabelDate.setText("FECHA");
-
-        FECHA.setEditable(false);
-
-        jLabelName.setText("NOMBRE");
-
-        NOMBRE.setEditable(false);
-
-        jButtonSerch.setText("Buscar");
-        jButtonSerch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSerchActionPerformed(evt);
-            }
-        });
-
-        jButtonDelate.setText("Borrar");
-
-        jButtonNew.setText("Agregar");
-        jButtonNew.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNewActionPerformed(evt);
-            }
-        });
-
-        jTextAreaDescription.setColumns(20);
-        jTextAreaDescription.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaDescription);
-
-        jLabelName1.setText("Nombre de imagen:");
-
-        jTextFieldDate.setText("DD/MM/YY");
-
-        jButtonChoise.setText("Seleccionar imagen");
-        jButtonChoise.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonChoiseActionPerformed(evt);
-            }
-        });
-
-        jButtonGuardar.setText("Guardar");
-        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarActionPerformed(evt);
-            }
-        });
-
-        previewLabel.setBackground(new java.awt.Color(0, 0, 0));
-        previewLabel.setText("PREVIEW");
-
-        jLabelImage1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelImage1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabelImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelImage1.setText("Galería Vacía");
-        jLabelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        etiquetaNombreVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaNombreVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        etiquetaFechaVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaFechaVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        etiquetaEmoticonVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaEmoticonVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        etiquetaDescripcionVariable1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        etiquetaDescripcionVariable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyImageDiary");
         setResizable(false);
@@ -186,7 +100,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonDerechaActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 410, -1, -1));
+        jPanelInicio.add(botonDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
         BotonFinal.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         BotonFinal.setText(">>");
@@ -195,13 +109,13 @@ public class Simplificado extends javax.swing.JFrame {
                 BotonFinalActionPerformed(evt);
             }
         });
-        jPanelInicio.add(BotonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 70, -1));
+        jPanelInicio.add(BotonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 70, -1));
 
         etiquetaImagen.setBackground(new java.awt.Color(0, 0, 0));
         etiquetaImagen.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanelInicio.add(etiquetaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 410, 410));
+        jPanelInicio.add(etiquetaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 720, 480));
 
         botonIzquierda.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonIzquierda.setText("<");
@@ -210,7 +124,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonIzquierdaActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
+        jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
         botonOrdenar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonOrdenar.setBorder(null);
@@ -282,7 +196,7 @@ public class Simplificado extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel15.setText("Galería vacía");
-        jPanelInicio.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, -1, -1));
+        jPanelInicio.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 290, -1, -1));
 
         etiquetaDescripcionVariable.setEditable(false);
         etiquetaDescripcionVariable.setColumns(0);
@@ -308,7 +222,7 @@ public class Simplificado extends javax.swing.JFrame {
                 BotonInicioActionPerformed(evt);
             }
         });
-        jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 70, -1));
+        jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 70, -1));
 
         TabPanel.addTab("Diario", jPanelInicio);
 
@@ -362,19 +276,9 @@ public class Simplificado extends javax.swing.JFrame {
         jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, -1, -1));
 
         textoNombre.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoNombreActionPerformed(evt);
-            }
-        });
         jPanel2.add(textoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 210, -1));
 
         textoEmoticon.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        textoEmoticon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoEmoticonActionPerformed(evt);
-            }
-        });
         jPanel2.add(textoEmoticon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 45, -1));
 
         botonDiario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -399,11 +303,6 @@ public class Simplificado extends javax.swing.JFrame {
 
         formatedFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/M/yy"))));
         formatedFecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        formatedFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                formatedFechaActionPerformed(evt);
-            }
-        });
         jPanel2.add(formatedFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, -1));
 
         javax.swing.GroupLayout jPanelADLayout = new javax.swing.GroupLayout(jPanelAD);
@@ -414,7 +313,10 @@ public class Simplificado extends javax.swing.JFrame {
         );
         jPanelADLayout.setVerticalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelADLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         TabPanel.addTab("Agregar", jPanelAD);
@@ -423,7 +325,7 @@ public class Simplificado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1097, Short.MAX_VALUE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,37 +335,9 @@ public class Simplificado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSerchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSerchActionPerformed
-        TabPanel.setSelectedIndex(2);
-
-    }//GEN-LAST:event_jButtonSerchActionPerformed
-
-    private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
-        TabPanel.setSelectedIndex(1);
-
-
-    }//GEN-LAST:event_jButtonNewActionPerformed
-
-    private void jButtonChoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChoiseActionPerformed
-
-
-    }//GEN-LAST:event_jButtonChoiseActionPerformed
-
-    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-
-    }//GEN-LAST:event_jButtonGuardarActionPerformed
-
     private void botonDiarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDiarioActionPerformed
         TabPanel.setSelectedIndex(0); //Moverse a la pestaña "Diario"
     }//GEN-LAST:event_botonDiarioActionPerformed
-
-    private void textoEmoticonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmoticonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoEmoticonActionPerformed
-
-    private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed
-
-    }//GEN-LAST:event_textoNombreActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         if ((textoNombre.getText().equals("")) && (etiquetaPreviewImage.getIcon() == null)) {
@@ -473,21 +347,8 @@ public class Simplificado extends javax.swing.JFrame {
         } else if (textoNombre.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Agregue un nombre");
         } else {
-            Nodo nodo = primero;
-            if (nodo != null) {
-                //Búsqueda """binaria""" (secuencial)
-                while (true) {
-                    if (nodo.getNombre().equals(textoNombre.getText())) { //Si sí lo encuentra
-                        JOptionPane.showMessageDialog(null, "Ingrese un nombre diferente");
-                        return;
-                    }
-                    if (nodo == ultimo) { //Si no lo encuentra
-                        break;
-                    }
-                    nodo = nodo.getSiguiente();
-                }
-            }
-            Insertar(textoNombre.getText(), formatedFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+           
+           Metodos.Insertar(textoNombre.getText(), formatedFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
             etiquetaPreviewImage.setIcon(null);
             textoNombre.setText("");
             formatedFecha.setText("");
@@ -495,15 +356,15 @@ public class Simplificado extends javax.swing.JFrame {
             textoDescripcion.setText("");
 
             //Mostrar la última imagen ingresada:
-            aux = ultimo;
+            aux = Metodos.ultimo;
             mostrarDatos();
 
         }
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void botonSeleccionarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeleccionarImagenActionPerformed
-        captarImagen();
-        mostrarImagen(etiquetaPreviewImage);
+        Metodos.captarImagen();
+        Metodos.mostrarImagen(etiquetaPreviewImage);
     }//GEN-LAST:event_botonSeleccionarImagenActionPerformed
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
@@ -513,9 +374,13 @@ public class Simplificado extends javax.swing.JFrame {
             eliminar.setTitle("Eliminar"); // Establecer el título
             eliminar.setDefaultCloseOperation(Eliminar.DISPOSE_ON_CLOSE); //Con esto, al darle clic a la "x" se cierra solo esa ventana
             eliminar.setResizable(false); // Evita que la ventana sea redimensionable
+
         } else {
             JOptionPane.showMessageDialog(null, "Primero añada una imagen");
         }
+       
+        
+        
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
@@ -596,86 +461,6 @@ public class Simplificado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonInicioActionPerformed
 
-    private void formatedFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formatedFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formatedFechaActionPerformed
-
-    public void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
-        Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
-        if (ultimo == null) {
-            // Caso especial: la lista está vacía
-            ultimo = auxiliar;
-            primero = auxiliar;
-            primero.setAnterior(ultimo);
-            ultimo.setSiguiente(primero);
-        } else {
-            // Caso general: agregar al final de la lista
-            auxiliar.setSiguiente(primero);
-            auxiliar.setAnterior(ultimo);
-            ultimo.setSiguiente(auxiliar);
-            primero.setAnterior(auxiliar);
-            ultimo = auxiliar;
-        }
-    }
-
-    public void eliminarDato(String nombre) {//con eliminar el nombre del nodo, se elimina toda la información
-        Nodo auxiliar = buscar(nombre);
-        if (auxiliar == null) {
-            JOptionPane.showMessageDialog(null, "El dato no existe");
-            return;
-        }
-
-        if (nombre.equals(auxiliar.getNombre())) {
-            if (auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
-                primero = null;
-                ultimo = null;
-                auxiliar = null;
-                aux = null;
-
-                //Vaciar los textField:
-                etiquetaImagen.setIcon(null);
-                etiquetaNombreVariable.setText("");
-                etiquetaFechaVariable.setText("");
-                etiquetaEmoticonVariable.setText("");
-                etiquetaDescripcionVariable.setText("");
-
-            } else if (auxiliar == primero) { // Caso en que se elimina el primer elemento:
-                primero = auxiliar.getSiguiente();
-                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
-                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
-                aux = auxiliar.getSiguiente();
-                mostrarDatos();
-            } else if (auxiliar == ultimo) { // Caso en que se elimina el último elemento:
-                ultimo = auxiliar.getAnterior();
-                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
-                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
-                aux = auxiliar.getSiguiente();
-                mostrarDatos();
-            } else {
-                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
-                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
-                aux = auxiliar.getSiguiente();
-                mostrarDatos();
-            }
-
-            JOptionPane.showMessageDialog(null, "El nodo se eliminó");
-
-        }
-    }
-
-    public void captarImagen() {//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
-        try {
-            File auxFile;
-            explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes", "jpg", "png", "jpeg", "gif"));
-            explorador.showOpenDialog(null);
-            auxFile = explorador.getSelectedFile();
-            directionTmp = auxFile.getAbsolutePath();
-
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
-        }
-    }
-    
     public Icon setIcono(String url, JButton bt){
         ImageIcon icon = new ImageIcon(getClass().getResource(url));
         int ancho = bt.getWidth();
@@ -685,51 +470,18 @@ public class Simplificado extends javax.swing.JFrame {
         return icono;
     }
 
-    public JLabel mostrarImagen(JLabel fotoLabel) {/*necesitamos crear un Jlabel donde iran las imágenes,
-                                                    debemos pasar ese Jlabel como parámetro para que cambie la imagen*/
-        try {
-            ImageIcon foto;
-            foto = new ImageIcon(directionTmp);
-            Icon icono;
-            icono = new ImageIcon(foto.getImage().getScaledInstance(fotoLabel.getWidth(), fotoLabel.getHeight(), Image.SCALE_DEFAULT));
-            fotoLabel.setIcon(icono);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
-        }
-        return fotoLabel;
-    }
-
-    public Nodo buscar(String nombre) {
-        Nodo nodo = primero;
-
-        //Búsqueda """binaria""" (secuencial)
-        while (true) {
-            if (nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
-                return nodo;
-            }
-            if (nodo == ultimo) { //Si no lo encuentra
-                return null;
-            }
-            nodo = nodo.getSiguiente();
-        }
-    }
-
     void mostrarDatos() {
         directionTmp = aux.getFoto();
         etiquetaNombreVariable.setText(aux.getNombre());
         etiquetaFechaVariable.setText(aux.getFecha());
         etiquetaEmoticonVariable.setText(aux.getEmoticon());
         etiquetaDescripcionVariable.setText(aux.getDescripcion());
-        mostrarImagen(etiquetaImagen);
+        Metodos.mostrarImagen(etiquetaImagen);
 
     }
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonFinal;
     private javax.swing.JButton BotonInicio;
-    private javax.swing.JTextField FECHA;
-    private javax.swing.JTextField NOMBRE;
     private javax.swing.JTabbedPane TabPanel;
     private javax.swing.JButton botonAgregar;
     private javax.swing.JButton botonBuscar;
@@ -743,46 +495,28 @@ public class Simplificado extends javax.swing.JFrame {
     private javax.swing.JButton botonSeleccionarImagen;
     private javax.swing.JLabel etiquetaDescripcion;
     private javax.swing.JLabel etiquetaDescripcion1;
-    private javax.swing.JTextArea etiquetaDescripcionVariable;
-    private javax.swing.JLabel etiquetaDescripcionVariable1;
-    private javax.swing.JLabel etiquetaEmoticon;
-    private javax.swing.JLabel etiquetaEmoticon1;
-    private javax.swing.JLabel etiquetaEmoticonVariable;
-    private javax.swing.JLabel etiquetaEmoticonVariable1;
-    private javax.swing.JLabel etiquetaFecha;
-    private javax.swing.JLabel etiquetaFecha1;
-    private javax.swing.JLabel etiquetaFechaVariable;
-    private javax.swing.JLabel etiquetaFechaVariable1;
-    private javax.swing.JLabel etiquetaImagen;
-    private javax.swing.JLabel etiquetaNombre;
-    private javax.swing.JLabel etiquetaNombre1;
-    private javax.swing.JLabel etiquetaNombreVariable;
-    private javax.swing.JLabel etiquetaNombreVariable1;
-    private javax.swing.JLabel etiquetaPreviewImage;
+    public javax.swing.JTextArea etiquetaDescripcionVariable;
+    public javax.swing.JLabel etiquetaEmoticon;
+    public javax.swing.JLabel etiquetaEmoticon1;
+    public javax.swing.JLabel etiquetaEmoticonVariable;
+    public javax.swing.JLabel etiquetaFecha;
+    public javax.swing.JLabel etiquetaFecha1;
+    public javax.swing.JLabel etiquetaFechaVariable;
+    public javax.swing.JLabel etiquetaImagen;
+    public javax.swing.JLabel etiquetaNombre;
+    public javax.swing.JLabel etiquetaNombre1;
+    public javax.swing.JLabel etiquetaNombreVariable;
+    public javax.swing.JLabel etiquetaPreviewImage;
     private javax.swing.JFormattedTextField formatedFecha;
-    private javax.swing.JButton jButtonChoise;
-    private javax.swing.JButton jButtonDelate;
-    private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JButton jButtonNew;
-    private javax.swing.JButton jButtonSerch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelDate;
-    private javax.swing.JLabel jLabelImage1;
-    private javax.swing.JLabel jLabelName;
-    private javax.swing.JLabel jLabelName1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelAD;
     private javax.swing.JPanel jPanelInicio;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextAreaDescription;
-    private javax.swing.JTextField jTextFieldDate;
-    private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JLabel previewLabel;
     private javax.swing.JTextArea textoDescripcion;
     private javax.swing.JTextField textoEmoticon;
     private javax.swing.JTextField textoNombre;

@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.Metodos;
 import Logica.Nodo;
 import javax.swing.JOptionPane;
 
@@ -71,7 +72,7 @@ public class Eliminar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese un nombre");
         }
         String nombre = textFieldEliminar.getText();
-        Nodo nodo = simplificado.buscar(nombre);
+        Nodo nodo = Metodos.buscar(nombre);
         
         
         if(nodo == null) { //No encontrado
@@ -79,8 +80,7 @@ public class Eliminar extends javax.swing.JFrame {
             return;
         }
         
-        simplificado.eliminarDato(nombre);
-        
+        Metodos.eliminarDato(nombre); 
     }//GEN-LAST:event_botonEliminarActionPerformed
 
 

@@ -10,42 +10,73 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Metodos {
     static String directionTmp;//captar direction temporal de la imagen
     static JFileChooser explorador = new JFileChooser();//explorador de archivos
-    static Nodo primero,ultimo;
+    public static Nodo primero,ultimo;
    
     public static void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto){
-        Nodo auxiliar = new Nodo(nombre,fecha, emoticon, descripcion, foto,null,null);
-        if(ultimo==null){
-
+        Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
+        if (ultimo == null) {
+            // Caso especial: la lista está vacía
             ultimo = auxiliar;
             primero = auxiliar;
             primero.setAnterior(ultimo);
             ultimo.setSiguiente(primero);
-
-        }else{
+        } else {
+            // Caso general: agregar al final de la lista
+            auxiliar.setSiguiente(primero);
+            auxiliar.setAnterior(ultimo);
             ultimo.setSiguiente(auxiliar);
             primero.setAnterior(auxiliar);
-            auxiliar.setAnterior(ultimo);
-            auxiliar.setSiguiente(primero);
             ultimo = auxiliar;
         }
-
     }
-    public void eliminarDato(String nombre){//con eliminar el Nombre del nodo, se elimina toda la información
-        Nodo auxiliar=primero;
-        boolean ciclo = true;
-        while(ciclo){
-            if(nombre == auxiliar.getNombre()){
-                auxiliar.getAnterior().setSiguiente(auxiliar.getAnterior());
-                JOptionPane.showMessageDialog(null,"El Nodo se eliminó!");
-                ciclo = false;
-            }else if (auxiliar.getSiguiente()==ultimo){
-                JOptionPane.showMessageDialog(null,"El dato no existe!");
-                ciclo = false;
-            }else{
-                auxiliar = auxiliar.getSiguiente();
+    public static void eliminarDato(String nombre){//con eliminar el Nombre del nodo, se elimina toda la información
+         Nodo auxiliar = buscar(nombre);
+        if (auxiliar == null) {
+            JOptionPane.showMessageDialog(null, "El dato no existe");
+            return;
+        }
+
+        if (nombre.equals(auxiliar.getNombre())) {
+            if (auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
+                primero = null;
+                ultimo = null;
+                auxiliar = null;
+
+            } else if (auxiliar == primero) { // Caso en que se elimina el primer elemento:
+                primero = auxiliar.getSiguiente();
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
+                
+            } else if (auxiliar == ultimo) { // Caso en que se elimina el último elemento:
+                ultimo = auxiliar.getAnterior();
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
+                
+            } else {
+                auxiliar.getAnterior().setSiguiente(auxiliar.getSiguiente());
+                auxiliar.getSiguiente().setAnterior(auxiliar.getAnterior());
             }
+
+            JOptionPane.showMessageDialog(null, "El nodo se eliminó");
+
         }
     }
+    
+     public static Nodo buscar(String nombre) {
+        Nodo nodo = primero;
+
+        //Búsqueda """binaria""" (secuencial)
+        while (true) {
+            if (nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
+                return nodo;
+            }
+            if (nodo == ultimo) { //Si no lo encuentra
+                return null;
+            }
+            nodo = nodo.getSiguiente();
+        }
+    }
+    
     public static void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
         try{
             File auxFile;

@@ -80,6 +80,8 @@ public class Metodos {
     public static void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
         try{
             File auxFile;
+            explorador.setCurrentDirectory(new File("."));
+            explorador.setDialogTitle("Subir imagen");
             explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes","jpg","png","jpeg","gif"));
             explorador.showOpenDialog(null);
             auxFile = explorador.getSelectedFile();

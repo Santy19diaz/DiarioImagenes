@@ -3,14 +3,10 @@ package GUI;
 import Logica.Nodo;
 import Logica.Metodos;
 import java.awt.Image;
-import java.io.File;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -19,13 +15,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Simplificado extends javax.swing.JFrame {
 
     String directionTmp;//captar direction temporal de la imagen
-    JFileChooser explorador = new JFileChooser();//explorador de archivos
     Nodo primero = Metodos.primero, ultimo = Metodos.ultimo, aux;
 
     public Simplificado() {
         initComponents();
         botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
-        botonEditar.setIcon(setIcono("/iconos/edit.png",botonEditar));
+        botonEditar.setIcon(setIcono("/iconos/edit.png", botonEditar));
         botonOrdenar.setIcon(setIcono("/iconos/check.png", botonOrdenar));
         botonBuscar.setIcon(setIcono("/iconos/buscar.png", botonBuscar));
         botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
@@ -347,8 +342,8 @@ public class Simplificado extends javax.swing.JFrame {
         } else if (textoNombre.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Agregue un nombre");
         } else {
-           
-           Metodos.Insertar(textoNombre.getText(), formatedFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
+
+            Metodos.Insertar(textoNombre.getText(), formatedFecha.getText(), textoEmoticon.getText(), textoDescripcion.getText(), directionTmp);
             etiquetaPreviewImage.setIcon(null);
             textoNombre.setText("");
             formatedFecha.setText("");
@@ -378,9 +373,7 @@ public class Simplificado extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Primero añada una imagen");
         }
-       
-        
-        
+
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
@@ -461,12 +454,12 @@ public class Simplificado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonInicioActionPerformed
 
-    public Icon setIcono(String url, JButton bt){
+    public Icon setIcono(String url, JButton bt) {
         ImageIcon icon = new ImageIcon(getClass().getResource(url));
         int ancho = bt.getWidth();
         int alto = bt.getHeight();
-        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho,alto,Image.SCALE_DEFAULT));
-        
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+
         return icono;
     }
 

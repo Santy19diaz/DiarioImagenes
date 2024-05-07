@@ -90,7 +90,6 @@ public class Simplificado extends javax.swing.JFrame {
         jPanelInicio.setMinimumSize(new java.awt.Dimension(100, 540));
         jPanelInicio.setPreferredSize(new java.awt.Dimension(498, 540));
         jPanelInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         botonDerecha.setBackground(new java.awt.Color(255, 255, 255));
         botonDerecha.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonDerecha.setForeground(new java.awt.Color(51, 51, 51));
@@ -113,8 +112,8 @@ public class Simplificado extends javax.swing.JFrame {
                 BotonFinalActionPerformed(evt);
             }
         });
-        jPanelInicio.add(BotonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 370, 70, -1));
 
+        jPanelInicio.add(BotonFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 370, 70, -1));
         etiquetaImagen.setBackground(new java.awt.Color(0, 0, 0));
         etiquetaImagen.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -131,6 +130,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonIzquierdaActionPerformed(evt);
             }
         });
+
         jPanelInicio.add(botonIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, -1));
 
         botonOrdenar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -160,7 +160,6 @@ public class Simplificado extends javax.swing.JFrame {
         etiquetaEmoticonVariable.setForeground(new java.awt.Color(51, 51, 51));
         etiquetaEmoticonVariable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelInicio.add(etiquetaEmoticonVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 510, 40, 40));
-
         botonAgregar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonAgregar.setBorder(null);
         botonAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +208,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonEditarActionPerformed(evt);
             }
         });
+
         jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 95, 95));
 
         BotonInicio.setBackground(new java.awt.Color(255, 255, 255));
@@ -221,6 +221,7 @@ public class Simplificado extends javax.swing.JFrame {
                 BotonInicioActionPerformed(evt);
             }
         });
+
         jPanelInicio.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 70, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 255));
@@ -249,6 +250,7 @@ public class Simplificado extends javax.swing.JFrame {
 
         jPanelInicio.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 130));
 
+
         TabPanel.addTab("Diario", jPanelInicio);
 
         jPanelAD.setPreferredSize(new java.awt.Dimension(498, 540));
@@ -262,6 +264,7 @@ public class Simplificado extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 280, -1));
 
         etiquetaNombre1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+
         etiquetaNombre1.setForeground(new java.awt.Color(51, 51, 51));
         etiquetaNombre1.setText("Nombre");
         jPanel2.add(etiquetaNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
@@ -291,7 +294,6 @@ public class Simplificado extends javax.swing.JFrame {
             }
         });
         jPanel2.add(botonSeleccionarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
-
         etiquetaPreviewImage.setBackground(new java.awt.Color(0, 0, 0));
         etiquetaPreviewImage.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaPreviewImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -339,7 +341,6 @@ public class Simplificado extends javax.swing.JFrame {
             }
         });
         jPanel2.add(botonDiario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 650, 80, 80));
-
         jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel7.setText("Seleccione una imagen");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
@@ -391,11 +392,13 @@ public class Simplificado extends javax.swing.JFrame {
         jPanelAD.setLayout(jPanelADLayout);
         jPanelADLayout.setHorizontalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelADLayout.setVerticalGroup(
             jPanelADLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
         );
 
         TabPanel.addTab("Agregar", jPanelAD);
@@ -424,6 +427,7 @@ public class Simplificado extends javax.swing.JFrame {
         } else if (etiquetaPreviewImage.getIcon() == null) {
             JOptionPane.showMessageDialog(null, "Agregue una imagen");
         } else if (textoNombre.getText().equals("") || textoNombre.getText().equals("Ingrese el nombre de la imágen")) {
+
             JOptionPane.showMessageDialog(null, "Agregue un nombre");
         } else {
 
@@ -565,7 +569,6 @@ public class Simplificado extends javax.swing.JFrame {
             formatedFecha.setForeground(Color.black);
         }
     }//GEN-LAST:event_formatedFechaMousePressed
-
     public Icon setIcono(String url, JButton bt) {
         ImageIcon icon = new ImageIcon(getClass().getResource(url));
         int ancho = bt.getWidth();

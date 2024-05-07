@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -38,6 +39,7 @@ public class Buscar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         textFieldBuscar = new javax.swing.JTextField();
+
         jPanel1 = new javax.swing.JPanel();
         botonBuscar = new javax.swing.JButton();
 
@@ -57,11 +59,15 @@ public class Buscar extends javax.swing.JFrame {
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonBuscar.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscar.setBorder(null);
+
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
             }
         });
+
+       // getContentPane().add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,6 +87,7 @@ public class Buscar extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 120));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

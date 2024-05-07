@@ -30,7 +30,6 @@ public class Editar extends javax.swing.JFrame {
         textoEmoticonEditar(nodo.getEmoticon());
         textoDescripcionEditar(nodo.getDescripcion());
         mostrarImagen(etiquetaPreviewImageEditar);
-        
         guardarEdicion.setIcon(setIcono("/iconos/save-file.png", guardarEdicion));
     }
 
@@ -62,7 +61,6 @@ public class Editar extends javax.swing.JFrame {
 
         return icono;
     }
-    
     public void textoNombreEditar(String nombre) {
         this.textoNombreEditar.setText(nombre);
     }
@@ -174,14 +172,12 @@ public class Editar extends javax.swing.JFrame {
                 guardarEdicionActionPerformed(evt);
             }
         });
-        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 660, 80, 80));
 
+        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 660, 80, 80));
         formatedFechaEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jPanel2.add(formatedFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 140, -1));
-
         jPanel3.setBackground(new java.awt.Color(51, 204, 255));
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 170));
-
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 760));
 
         pack();

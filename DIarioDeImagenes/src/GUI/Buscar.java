@@ -3,6 +3,11 @@ package GUI;
 
 import Logica.Metodos;
 import Logica.Nodo;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +21,16 @@ public class Buscar extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); //Centrar la ventana
         this.simplificado = simplificado;
+        botonBuscar.setIcon(setIcono("/iconos/magnifying-glass.png", botonBuscar));
+    }
+    
+     public Icon setIcono(String url, JButton bt) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(url));
+        int ancho = bt.getWidth();
+        int alto = bt.getHeight();
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+
+        return icono;
     }
 
     @SuppressWarnings("unchecked")
@@ -24,42 +39,55 @@ public class Buscar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         textFieldBuscar = new javax.swing.JTextField();
-        botonBuscar = new javax.swing.JButton();
+
         jPanel1 = new javax.swing.JPanel();
+        botonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        //getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Nombre de la imagen:");
-        //getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         textFieldBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-       // getContentPane().add(textFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
+        getContentPane().add(textFieldBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        botonBuscar.setBackground(new java.awt.Color(255, 255, 255));
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar.setText("Buscar");
+        botonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonBuscar.setBorder(null);
+
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
             }
         });
-       // getContentPane().add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
+       // getContentPane().add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(374, Short.MAX_VALUE)
+                .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        //getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 120));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 120));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -2,6 +2,10 @@ package GUI;
 
 import Logica.Metodos;
 import Logica.Nodo;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,6 +19,16 @@ public class Eliminar extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); //Centrar la ventana
         this.simplificado = simplificado;
+        botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
+    }
+    
+     public Icon setIcono(String url, JButton bt) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(url));
+        int ancho = bt.getWidth();
+        int alto = bt.getHeight();
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+
+        return icono;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,15 +55,16 @@ public class Eliminar extends javax.swing.JFrame {
 
         textFieldEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jPanel1.add(textFieldEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
-
+        botonEliminar.setBackground(new java.awt.Color(255, 255, 255));
         botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonEliminar.setText("Eliminar");
+        botonEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminar.setBorder(null);
         botonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
+        jPanel1.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 80, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,7 +74,7 @@ public class Eliminar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
         );
 
         pack();

@@ -1,27 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package Persistencia;
 
-import GUI.Simplificado;
-import com.formdev.flatlaf.*;
-import com.formdev.flatlaf.FlatDarculaLaf;
-
-import javax.swing.UIManager;
-
+/**
+ *
+ * @author 19dia
+ */
 public class Main {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
-        }
-        
-        Simplificado simple = new Simplificado();
-        simple.setVisible(true);
-        simple.setLocationRelativeTo(null);
-
-
-        
+        // TODO code application logic here
     }
     
 }

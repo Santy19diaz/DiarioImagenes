@@ -55,10 +55,12 @@ public class Eliminar extends javax.swing.JFrame {
 
         textFieldEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jPanel1.add(textFieldEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 270, -1));
+
         botonEliminar.setBackground(new java.awt.Color(255, 255, 255));
         botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonEliminar.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminar.setBorder(null);
+        botonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarActionPerformed(evt);

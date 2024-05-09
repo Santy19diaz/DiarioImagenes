@@ -39,7 +39,6 @@ public class Buscar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         textFieldBuscar = new javax.swing.JTextField();
-
         jPanel1 = new javax.swing.JPanel();
         botonBuscar = new javax.swing.JButton();
 
@@ -57,37 +56,32 @@ public class Buscar extends javax.swing.JFrame {
 
         botonBuscar.setBackground(new java.awt.Color(255, 255, 255));
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        botonBuscar.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscar.setBorder(null);
-
+        botonBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
             }
         });
 
-       // getContentPane().add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(374, Short.MAX_VALUE)
+                .addContainerGap(364, Short.MAX_VALUE)
                 .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(15, 15, 15)
                 .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 120));
-
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

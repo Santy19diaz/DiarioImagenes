@@ -142,7 +142,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonOrdenarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 660, 95, 95));
+        jPanelInicio.add(botonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 650, 95, 95));
 
         jLabelTitle.setBackground(new java.awt.Color(51, 204, 255));
         jLabelTitle.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -188,7 +188,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonAgregarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 660, 95, 95));
+        jPanelInicio.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 650, 95, 95));
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonBuscar.setBorder(null);
@@ -198,7 +198,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonBuscarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 660, 95, 95));
+        jPanelInicio.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 650, 95, 95));
 
         botonEliminar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonEliminar.setBorder(null);
@@ -208,7 +208,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonEliminarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 660, 95, 95));
+        jPanelInicio.add(botonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 650, 95, 95));
 
         jLabelEmpty.setBackground(new java.awt.Color(204, 204, 204));
         jLabelEmpty.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -236,7 +236,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonEditarActionPerformed(evt);
             }
         });
-        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 660, 95, 95));
+        jPanelInicio.add(botonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, 95, 95));
 
         botonInicio.setBackground(new java.awt.Color(255, 255, 255));
         botonInicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -309,13 +309,12 @@ public class Simplificado extends javax.swing.JFrame {
         botonGuardar.setBackground(new java.awt.Color(255, 255, 255));
         botonGuardar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         botonGuardar.setBorder(null);
-        botonGuardar.setLabel("");
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 680, 80, 80));
+        jPanel2.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 660, 80, 80));
 
         textoNombre.setBackground(new java.awt.Color(255, 255, 255));
         textoNombre.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -348,7 +347,7 @@ public class Simplificado extends javax.swing.JFrame {
                 botonDiarioActionPerformed(evt);
             }
         });
-        jPanel2.add(botonDiario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, 80, 80));
+        jPanel2.add(botonDiario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 660, 80, 80));
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
         jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -410,11 +409,11 @@ public class Simplificado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1285, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 834, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
         );
 
         pack();

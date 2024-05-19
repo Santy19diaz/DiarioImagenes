@@ -4,6 +4,7 @@ import Logica.Nodo;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -29,6 +30,7 @@ public class Editar extends javax.swing.JFrame {
         textoEmoticonEditar(nodo.getEmoticon());
         textoDescripcionEditar(nodo.getDescripcion());
         mostrarImagen(etiquetaPreviewImageEditar);
+        guardarEdicion.setIcon(setIcono("/iconos/save-file.png", guardarEdicion));
     }
 
     
@@ -51,6 +53,14 @@ public class Editar extends javax.swing.JFrame {
         return fotoLabel;
     }
     
+    public Icon setIcono(String url, JButton bt) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(url));
+        int ancho = bt.getWidth();
+        int alto = bt.getHeight();
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+
+        return icono;
+    }
     public void textoNombreEditar(String nombre) {
         this.textoNombreEditar.setText(nombre);
     }
@@ -87,9 +97,10 @@ public class Editar extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         textoDescripcionEditar = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
         guardarEdicion = new javax.swing.JButton();
         formatedFechaEditar = new javax.swing.JFormattedTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,33 +113,35 @@ public class Editar extends javax.swing.JFrame {
 
         etiquetaNombre2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaNombre2.setText("Nombre:");
-        jPanel2.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+        jPanel2.add(etiquetaNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         etiquetaFecha2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaFecha2.setText("Fecha (d/m/yy):");
-        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        jPanel2.add(etiquetaFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         etiquetaEmoticon2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaEmoticon2.setText("Emoticón:");
-        jPanel2.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        jPanel2.add(etiquetaEmoticon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
 
         etiquetaDescripcion2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaDescripcion2.setText("Descripción:");
-        jPanel2.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
+        jPanel2.add(etiquetaDescripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
 
         etiquetaPreviewImageEditar.setBackground(new java.awt.Color(0, 0, 0));
         etiquetaPreviewImageEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         etiquetaPreviewImageEditar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaPreviewImageEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(etiquetaPreviewImageEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 410, 410));
+        jPanel2.add(etiquetaPreviewImageEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 720, 480));
 
+        textoNombreEditar.setBackground(new java.awt.Color(255, 255, 255));
         textoNombreEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        textoNombreEditar.setBorder(null);
         textoNombreEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoNombreEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(textoNombreEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 210, -1));
+        jPanel2.add(textoNombreEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 320, -1));
 
         textoEmoticonEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoEmoticonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -136,36 +149,45 @@ public class Editar extends javax.swing.JFrame {
                 textoEmoticonEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(textoEmoticonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 45, -1));
+        jPanel2.add(textoEmoticonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 45, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Galería vacía");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 720, 480));
 
         textoDescripcionEditar.setColumns(1);
         textoDescripcionEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         textoDescripcionEditar.setRows(5);
         jScrollPane4.setViewportView(textoDescripcionEditar);
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 310, 190));
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 310, 180));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel6.setText("Editar Imagen");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, 40));
-
+        guardarEdicion.setBackground(new java.awt.Color(255, 255, 255));
         guardarEdicion.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        guardarEdicion.setText("Guardar");
+        guardarEdicion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         guardarEdicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarEdicionActionPerformed(evt);
             }
         });
-        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 690, -1, -1));
+        jPanel2.add(guardarEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 660, 80, 80));
 
         formatedFechaEditar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jPanel2.add(formatedFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 140, -1));
+        jPanel2.add(formatedFechaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 140, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 760));
+        jPanel3.setBackground(new java.awt.Color(51, 204, 255));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Editar Imagen");
+        jLabel6.setPreferredSize(new java.awt.Dimension(238, 100));
+        jPanel3.add(jLabel6);
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 100));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -203,6 +225,7 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea textoDescripcionEditar;
     private javax.swing.JTextField textoEmoticonEditar;

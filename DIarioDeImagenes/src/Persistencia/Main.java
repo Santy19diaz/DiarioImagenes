@@ -20,8 +20,6 @@ public class Main {
         simple.setVisible(true);
         simple.setLocationRelativeTo(null);
 
-
-        
     }
     
 }

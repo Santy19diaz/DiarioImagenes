@@ -1,51 +1,39 @@
 package Logica;
 
 public class Nodo {
-    int id;
-    String foto;
-    String fecha;
+    //Atributos:
     String nombre;
+    String fecha;
+    String emoticon;
     String descripcion;
-    String emote;
+    String foto;
     Nodo siguiente;
     Nodo anterior;
 
+    //Constructores:
     public Nodo (){
     }
 
-    public Nodo(int id, String fecha, String nombre, Nodo siguiente, Nodo anterior) {
-        this.id = id;
-        this.fecha = fecha;
+    public Nodo(String nombre, String fecha, String emoticon, String descripcion, String foto, Nodo siguiente, Nodo anterior) {
         this.nombre = nombre;
-        this.siguiente = siguiente;
-        this.anterior = anterior;
-    }
-
-    public Nodo(int id, String foto, String fecha, String nombre, String descripcion, String emote, Nodo siguiente, Nodo anterior) {
-        this.id = id;
-        this.foto = foto;
         this.fecha = fecha;
-        this.nombre = nombre;
+        this.emoticon = emoticon;
         this.descripcion = descripcion;
-        this.emote = emote;
+        this.foto = foto;
         this.siguiente = siguiente;
         this.anterior = anterior;
     }
+    
+      
 
-    public int getId() {
-        return id;
+    //Getters y setters:
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getFecha() {
@@ -56,12 +44,12 @@ public class Nodo {
         this.fecha = fecha;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEmoticon() {
+        return emoticon;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEmoticon(String emoticon) {
+        this.emoticon = emoticon;
     }
 
     public String getDescripcion() {
@@ -72,12 +60,12 @@ public class Nodo {
         this.descripcion = descripcion;
     }
 
-    public String getEmote() {
-        return emote;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setEmote(String emote) {
-        this.emote = emote;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public Nodo getSiguiente() {
@@ -95,4 +83,63 @@ public class Nodo {
     public void setAnterior(Nodo anterior) {
         this.anterior = anterior;
     }
+    
+    // Método para intercambiar dos nodos en la lista
+    private void swap(Nodo a, Nodo b) {
+        String tempNombre = a.nombre;
+        String tempFecha = a.fecha;
+        String tempEmoticon = a.emoticon;
+        String tempDescripcion = a.descripcion;
+        String tempFoto = a.foto;
+
+        a.nombre = b.nombre;
+        a.fecha = b.fecha;
+        a.emoticon = b.emoticon;
+        a.descripcion = b.descripcion;
+        a.foto = b.foto;
+
+        b.nombre = tempNombre;
+        b.fecha = tempFecha;
+        b.emoticon = tempEmoticon;
+        b.descripcion = tempDescripcion;
+        b.foto = tempFoto;
+    }
+
+    // Método para realizar el particionado en Quick Sort
+    private Nodo partition(Nodo low, Nodo high) {
+        String pivot = high.fecha;
+        Nodo i = low.anterior;
+
+        for (Nodo j = low; j != high; j = j.siguiente) {
+            if (j.fecha.compareTo(pivot) < 0) {
+                i = (i == null) ? low : i.siguiente;
+                swap(i, j);
+            }
+        }
+
+        i = (i == null) ? low : i.siguiente;
+        swap(i, high);
+        return i;
+    }
+
+    // Método para implementar Quick Sort en la lista
+    private void quickSort(Nodo low, Nodo high) {
+        if (high != null && low != high && low != high.siguiente) {
+            Nodo pivot = partition(low, high);
+
+            quickSort(low, pivot.anterior);
+            quickSort(pivot.siguiente, high);
+        }
+    }
+
+    // Método público para iniciar Quick Sort en la lista
+    public void sort(Nodo head) {
+        Nodo last = head;
+        while (last.siguiente != null) {
+            last = last.siguiente;
+        }
+        quickSort(head, last);
+    }
+    
 }
+

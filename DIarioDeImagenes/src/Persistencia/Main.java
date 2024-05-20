@@ -1,4 +1,5 @@
 package Persistencia;
+//que no panda el cunico
 
 import GUI.InicioSesion;
 import GUI.Simplificado;

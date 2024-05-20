@@ -6,9 +6,9 @@ package Persistencia;
  */
 public class Usuarios {
 
-    String id;
-    String contra;
-    String correo;
+    public String id;
+    public String contra;
+    public String correo;
     
     public Usuarios(String id, String contra, String correo) {
         this.id = id;

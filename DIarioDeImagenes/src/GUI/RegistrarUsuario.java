@@ -1,7 +1,6 @@
 package GUI;
 
 import Persistencia.Usuarios;
-import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,7 +25,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
 
      void guardarUsuario() {
-        sesion = new Usuarios(txtId.getText(), txtPass.getText(),txtPass1.getText());
+        sesion = new Usuarios(txtId.getText(), txtPass.getText(),txtCorreo.getText());
     }
 
     void guardarDatosArchivo() {
@@ -35,7 +34,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         if (!archivo.exists()) {
             try {
                 FileWriter escribir = new FileWriter("Usuarios.txt");
-                //escribir.write(sesion.id + "," + sesion.contra + "\n");
+                escribir.write(sesion.id + "," + sesion.contra + "," +sesion.correo +"\n");
                 escribir.flush();
                 escribir.close();
             } catch (IOException ex) {
@@ -44,7 +43,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         } else {
             try {
                 FileWriter escribir = new FileWriter("Usuarios.txt", true);
-               // escribir.write(sesion.id + "," + sesion.contra + "\n");
+                escribir.write(sesion.id + "," + sesion.contra + "," +sesion.correo +"\n");
                 escribir.flush();
                 escribir.close();
             } catch (IOException ex) {
@@ -54,40 +53,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
     }
 
-    void leerArchivo() {
-        String linea;
-        boolean bandera = false;
-        try {
-            FileReader leer = new FileReader("Usuarios.txt");
-            BufferedReader br = new BufferedReader(leer);
-            try {
-                while ((linea = br.readLine()) != null) {
-                    StringTokenizer st = new StringTokenizer(linea, ",");
-                    if (txtId.getText().equals(st.nextToken()) && txtPass.getText().equals(st.nextToken())) {
-                        bandera = true;
-                        break;
-                    }
-                }
-                br.close();
+    
 
-                if (bandera == true) {
-                    //
-                } else {
-                    JOptionPane.showMessageDialog(null, "usuario no encontrado");
-                    txtId.setText("");
-                    txtPass.setText("");
-
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    void borrarUsuario(String id, String pass) {
+    void borrarUsuario(String id, String pass,String correo) {
         File archivo = new File("Usuarios.txt");
         File auxiliar = new File("Auxiliar.txt");
 
@@ -102,7 +70,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 StringTokenizer st = new StringTokenizer(linea, ",");
                 String usuarioId = st.nextToken();
                 String usuarioPass = st.nextToken();
-                if (usuarioId.equals(id) && usuarioPass.equals(pass)) {
+                String usuarioCorreo = st.nextToken();
+                if (usuarioId.equals(id) && usuarioPass.equals(pass) && usuarioCorreo.equals(correo)) {
                     encontrado = true;
                 } else {
                     escribir.write(linea + "\n");
@@ -126,27 +95,12 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        RegistrarUsuario is = new RegistrarUsuario();
-
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
-        }
-
-        is.setVisible(true);
-        is.setLocationRelativeTo(null);
-
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtPass = new javax.swing.JPasswordField();
         txtId = new javax.swing.JTextField();
         accesoBt = new javax.swing.JButton();
         agregarBt = new javax.swing.JButton();
@@ -155,10 +109,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        txtPass1 = new javax.swing.JPasswordField();
+        txtPass = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("SIGN-UP");
         setBackground(new java.awt.Color(137, 209, 250));
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
@@ -170,13 +125,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         jLabel2.setText("Correo");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 71, -1));
-
-        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPassKeyTyped(evt);
-            }
-        });
-        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 290, -1));
 
         txtId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -195,12 +143,17 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 accesoBtActionPerformed(evt);
             }
         });
-        getContentPane().add(accesoBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 130, -1));
+        getContentPane().add(accesoBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 140, 50));
 
         agregarBt.setBackground(new java.awt.Color(102, 204, 255));
         agregarBt.setForeground(new java.awt.Color(255, 255, 255));
         agregarBt.setText("Cancelar");
-        getContentPane().add(agregarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 130, -1));
+        agregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agregarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 140, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -219,21 +172,23 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel6.setText("Contraseña");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 71, -1));
 
-        txtPass1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPass1ActionPerformed(evt);
-            }
-        });
-        txtPass1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPass1KeyTyped(evt);
+                txtPassKeyTyped(evt);
             }
         });
-        getContentPane().add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 290, -1));
+        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 290, -1));
 
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("maximo 9 caracteres.");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 124, -1));
+
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -246,27 +201,33 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtIdKeyTyped
 
-    private void txtPassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyTyped
-
-        if (txtPass.getText().length() > 9) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtPassKeyTyped
-
     private void accesoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoBtActionPerformed
-        JOptionPane.showConfirmDialog(null, "Usuario registado con exito");
-        InicioSesion is = new InicioSesion();
-        is.setVisible(true);
-        is.setLocationRelativeTo(null);
+        String valid = txtCorreo.getText();
+        if (!(valid.contains("@") || valid.contains(".com"))) {
+            JOptionPane.showMessageDialog(null, "Ingrese un correo valido");
+        } else {
+            guardarUsuario();
+            guardarDatosArchivo();
+            JOptionPane.showMessageDialog(null, "Usuario registado con exito");
+            InicioSesion is = new InicioSesion();
+            is.setVisible(true);
+            is.setLocationRelativeTo(null);
+            dispose();
+        }
+
     }//GEN-LAST:event_accesoBtActionPerformed
 
-    private void txtPass1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyTyped
+    private void txtPassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPass1KeyTyped
+    }//GEN-LAST:event_txtPassKeyTyped
 
-    private void txtPass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPass1ActionPerformed
+    private void txtCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPass1ActionPerformed
+    }//GEN-LAST:event_txtCorreoKeyTyped
+
+    private void agregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBtActionPerformed
+        dispose();
+    }//GEN-LAST:event_agregarBtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -280,9 +241,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtId;
     private javax.swing.JPasswordField txtPass;
-    private javax.swing.JPasswordField txtPass1;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 public class InicioSesion extends javax.swing.JFrame {
 
     Simplificado s = new Simplificado();
+     public String user;
     
     public boolean apro;
 
@@ -225,6 +226,7 @@ public class InicioSesion extends javax.swing.JFrame {
             if (apro == true) {
                 s.setVisible(true);
                 s.setLocationRelativeTo(null);
+                user = txtId.getText();
                 dispose();
             } else {
                 txtId.setText("");
@@ -238,6 +240,7 @@ public class InicioSesion extends javax.swing.JFrame {
         RegistrarUsuario ru = new RegistrarUsuario();
         ru.setVisible(true);
         ru.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_agregarBtActionPerformed
 
 

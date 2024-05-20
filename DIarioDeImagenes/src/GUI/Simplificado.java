@@ -4,6 +4,7 @@ import Logica.Nodo;
 import Logica.Metodos;
 import java.awt.Color;
 import java.awt.Image;
+import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,22 +15,25 @@ import javax.swing.JOptionPane;
  * @author 19dia
  */
 public class Simplificado extends javax.swing.JFrame {
-
+    RegistrarUsuario ru = new RegistrarUsuario();
+    String nomb = "";
     String directionTmp;//captar direction temporal de la imagen
     Nodo primero = Metodos.primero, ultimo = Metodos.ultimo, aux;
 
-    public Simplificado() {
+    public Simplificado() throws IOException {
         initComponents();
+        ru.guardarLista(nomb);
+        
 //        botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
 //        botonEditar.setIcon(setIcono("/iconos/edit.png", botonEditar));
 //        botonOrdenar.setIcon(setIcono("/iconos/check.png", botonOrdenar));
 //        botonBuscar.setIcon(setIcono("/iconos/buscar.png", botonBuscar));
 //        botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
-//        botonIzquierda.setIcon(setIcono("/iconos/left.png", botonIzquierda));
-//        botonInicio.setIcon(setIcono("/iconos/first.png", botonInicio));
-//        botonDerecha.setIcon(setIcono("/iconos/right.png", botonDerecha));
-//        botonFinal.setIcon(setIcono("/iconos/last.png", botonFinal));
-//        botonGuardar.setIcon(setIcono("/iconos/save-file.png", botonGuardar));
+        botonIzquierda.setIcon(setIcono("/iconos/left.png", botonIzquierda));
+        botonInicio.setIcon(setIcono("/iconos/first.png", botonInicio));
+        botonDerecha.setIcon(setIcono("/iconos/right.png", botonDerecha));
+        botonFinal.setIcon(setIcono("/iconos/last.png", botonFinal));
+        botonGuardar.setIcon(setIcono("/iconos/save-file.png", botonGuardar));
 //        botonDiario.setIcon(setIcono("/iconos/left-arrow.png", botonDiario));
 
     }
@@ -439,7 +443,7 @@ public class Simplificado extends javax.swing.JFrame {
             formatedFecha.setText("");
             textoEmoticon.setText("");
             textoDescripcion.setText("");
-
+            //Metodos.escribirEnArchivo(nomb);
             //Mostrar la última imagen ingresada:
             aux = Metodos.ultimo;
             mostrarDatos();
@@ -549,10 +553,10 @@ public class Simplificado extends javax.swing.JFrame {
     }//GEN-LAST:event_textoNombreActionPerformed
 
     private void textoNombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoNombreMousePressed
-       if(textoNombre.getText().equals("Ingrese el nombre de la imágen")){
-        textoNombre.setText("");
-        textoNombre.setForeground(Color.black);
-       }
+        if (textoNombre.getText().equals("Ingrese el nombre de la imágen")) {
+            textoNombre.setText("");
+            textoNombre.setForeground(Color.black);
+        }
     }//GEN-LAST:event_textoNombreMousePressed
 
     private void textoNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoNombreMouseClicked

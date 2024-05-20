@@ -1,18 +1,18 @@
 package Logica;
 
 import java.awt.Image;
-import java.io.File;
+import java.io.*;
 import javax.swing.*;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class Metodos {
-    static String directionTmp;//captar direction temporal de la imagen
-    static JFileChooser explorador = new JFileChooser();//explorador de archivos
-    public static Nodo primero,ultimo;
+    static String directionTmp; // captar direction temporal de la imagen
+    static JFileChooser explorador = new JFileChooser(); // explorador de archivos
+    public static Nodo primero, ultimo;
 
-    public static void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto){
+    public static void Insertar(String nombre, String fecha, String emoticon, String descripcion, String foto) {
         Nodo auxiliar = new Nodo(nombre, fecha, emoticon, descripcion, foto, null, null);
         if (ultimo == null) {
             // Caso especial: la lista está vacía
@@ -29,7 +29,8 @@ public class Metodos {
             ultimo = auxiliar;
         }
     }
-    public static void eliminarDato(String nombre){//con eliminar el Nombre del nodo, se elimina toda la información
+
+    public static void eliminarDato(String nombre) { // con eliminar el Nombre del nodo, se elimina toda la información
         Nodo auxiliar = buscar(nombre);
         if (auxiliar == null) {
             JOptionPane.showMessageDialog(null, "El dato no existe");
@@ -37,7 +38,7 @@ public class Metodos {
         }
 
         if (nombre.equals(auxiliar.getNombre())) {
-            if (auxiliar == primero && auxiliar == ultimo) { //Caso en el que solo hay un elemento y se elimina
+            if (auxiliar == primero && auxiliar == ultimo) { // Caso en el que solo hay un elemento y se elimina
                 primero = null;
                 ultimo = null;
                 auxiliar = null;
@@ -58,52 +59,66 @@ public class Metodos {
             }
 
             JOptionPane.showMessageDialog(null, "El nodo se eliminó");
-
         }
     }
-   
-    
-     public static Nodo buscar(String nombre) {
 
+    public static Nodo buscar(String nombre) {
         Nodo nodo = primero;
-
-        //Búsqueda """binaria""" (secuencial)
+        // Búsqueda secuencial
         while (true) {
-            if (nodo.getNombre().equals(nombre)) { //Si sí lo encuentra
+            if (nodo.getNombre().equals(nombre)) { // Si sí lo encuentra
                 return nodo;
             }
-            if (nodo == ultimo) { //Si no lo encuentra
+            if (nodo == ultimo) { // Si no lo encuentra
                 return null;
             }
             nodo = nodo.getSiguiente();
         }
     }
 
-    public static void captarImagen(){//este es el mismo que vimos en clase, asi que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
-        try{
+    public static void captarImagen() { // este es el mismo que vimos en clase, así que será fácil de usar, solo lo agregas y elegimos la imagen a agregar
+        try {
             File auxFile;
             explorador.setCurrentDirectory(new File("."));
             explorador.setDialogTitle("Subir imagen");
-            explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes","jpg","png","jpeg","gif"));
+            explorador.addChoosableFileFilter(new FileNameExtensionFilter("imágenes", "jpg", "png", "jpeg", "gif"));
             explorador.showOpenDialog(null);
             auxFile = explorador.getSelectedFile();
             directionTmp = auxFile.getAbsolutePath();
-
-        }catch(Exception ex){JOptionPane.showMessageDialog(null,"Error al abrir el archivo");}
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
+        }
     }
 
-    public static JLabel mostrarImagen(JLabel fotoLabel){/*necesitamos crear un Jlabel donde iran las imágenes,
-                                                    debemos pasar ese Jlabel como parámetro para que cambie la imagen*/
-        try{
+    public static JLabel mostrarImagen(JLabel fotoLabel) { /* necesitamos crear un Jlabel donde irán las imágenes, debemos pasar ese Jlabel como parámetro para que cambie la imagen */
+        try {
             ImageIcon foto;
             foto = new ImageIcon(directionTmp);
             Icon icono;
-            icono = new ImageIcon(foto.getImage().getScaledInstance(fotoLabel.getWidth(),fotoLabel.getHeight(),Image.SCALE_DEFAULT));
+            icono = new ImageIcon(foto.getImage().getScaledInstance(fotoLabel.getWidth(), fotoLabel.getHeight(), Image.SCALE_DEFAULT));
             fotoLabel.setIcon(icono);
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null,"Error al abrir el archivo");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al abrir el archivo");
         }
         return fotoLabel;
+    }
+
+    public static void escribirEnArchivo(String nombreArchivo) {
+        if (primero == null) {
+            System.out.println("La lista está vacía");
+            return;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            Nodo actual = primero;
+            do {
+                writer.write(actual.getNombre() + "," + actual.getFecha() + "," + actual.getEmoticon() + "," + actual.getDescripcion() + "," + actual.getFoto());
+                writer.newLine();
+                actual = actual.getSiguiente();
+            } while (actual != primero);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String getDirectionTmp() {
@@ -137,7 +152,4 @@ public class Metodos {
     public static void setUltimo(Nodo ultimo) {
         Metodos.ultimo = ultimo;
     }
-    
-    
 }
-

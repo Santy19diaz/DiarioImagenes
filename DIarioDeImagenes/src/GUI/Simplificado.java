@@ -4,7 +4,6 @@ import Logica.Nodo;
 import Logica.Metodos;
 import java.awt.Color;
 import java.awt.Image;
-import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,14 +14,11 @@ import javax.swing.JOptionPane;
  * @author 19dia
  */
 public class Simplificado extends javax.swing.JFrame {
-    RegistrarUsuario ru = new RegistrarUsuario();
-    String nomb = "";
     String directionTmp;//captar direction temporal de la imagen
     Nodo primero = Metodos.primero, ultimo = Metodos.ultimo, aux;
 
-    public Simplificado() throws IOException {
+    public Simplificado() {
         initComponents();
-        ru.guardarLista(nomb);
         
 //        botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
 //        botonEditar.setIcon(setIcono("/iconos/edit.png", botonEditar));

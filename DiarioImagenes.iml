@@ -7,5 +7,35 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../FlatLaf-main" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/buildSrc/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-core/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-core/src/main/java9" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-core/src/test/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-demo/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-extras/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-inter/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-inter/src/test/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-jetbrains-mono/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-jetbrains-mono/src/test/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-roboto-mono/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-roboto-mono/src/test/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-roboto/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-fonts/flatlaf-fonts-roboto/src/test/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-intellij-themes/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-jide-oss/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-natives/flatlaf-natives-jna/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-swingx/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-testing/flatlaf-testing-modular-app/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-testing/src/main/java" />
+          <root url="file://$MODULE_DIR$/../FlatLaf-main/flatlaf-theme-editor/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

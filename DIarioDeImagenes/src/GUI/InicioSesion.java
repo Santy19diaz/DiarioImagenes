@@ -1,6 +1,6 @@
 package GUI;
 
-import com.formdev.flatlaf.FlatLightLaf;
+
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -102,6 +102,21 @@ public class InicioSesion extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public static void main(String[] args) {
+        InicioSesion is = new InicioSesion();
+/*
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+*/
+
+        is.setVisible(true);
+        is.setLocationRelativeTo(null);
+
     }
 
     @SuppressWarnings("unchecked")

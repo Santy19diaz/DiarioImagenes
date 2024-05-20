@@ -16,8 +16,10 @@ import java.util.logging.Logger;
  * @author 19dia
  */
 public class InicioSesion extends javax.swing.JFrame {
-Simplificado s = new Simplificado();
-   
+
+    Simplificado s = new Simplificado();
+    
+    public boolean apro;
 
     /**
      * Creates new form InicioSecion
@@ -25,7 +27,7 @@ Simplificado s = new Simplificado();
     public InicioSesion() {
         initComponents();
     }
-    
+
     void leerArchivo() {
         String linea;
         boolean bandera = false;
@@ -43,18 +45,19 @@ Simplificado s = new Simplificado();
                 br.close();
 
                 if (bandera == true) {
-                    //
+                    apro = true;
                 } else {
                     JOptionPane.showMessageDialog(null, "usuario no encontrado");
+                    apro=false;
                     txtId.setText("");
                     txtPass.setText("");
 
                 }
             } catch (IOException ex) {
-                Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -62,7 +65,8 @@ Simplificado s = new Simplificado();
     void borrarUsuario(String id, String pass) {
         File archivo = new File("Usuarios.txt");
         File auxiliar = new File("Auxiliar.txt");
-
+        
+        
         try {
             FileReader leer = new FileReader(archivo);
             BufferedReader br = new BufferedReader(leer);
@@ -86,30 +90,18 @@ Simplificado s = new Simplificado();
 
             if (encontrado) {
                 archivo.delete();
-                
+
                 auxiliar.renameTo(archivo);
 
                 JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente");
+                apro = true;
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+                apro = false;
             }
         } catch (IOException ex) {
             Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public static void main(String[] args) {
-        InicioSesion is = new InicioSesion();
-
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
-        }
-
-        is.setVisible(true);
-        is.setLocationRelativeTo(null);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -209,16 +201,21 @@ Simplificado s = new Simplificado();
     }//GEN-LAST:event_txtPassKeyTyped
 
     private void accesoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoBtActionPerformed
-                if (txtId.getText().equals("") || txtPass.getText().equals("")) {
+        if (txtId.getText().equals("") || txtPass.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
             txtId.setText("");
             txtPass.setText("");
         } else {
             leerArchivo();
-            s.setVisible(true);
-            s.setLocationRelativeTo(null);
-            txtId.setText("");
-            txtPass.setText("");
+            if (apro == true) {
+                s.setVisible(true);
+                s.setLocationRelativeTo(null);
+                dispose();
+            } else {
+                txtId.setText("");
+                txtPass.setText("");
+            }
+
         }
     }//GEN-LAST:event_accesoBtActionPerformed
 

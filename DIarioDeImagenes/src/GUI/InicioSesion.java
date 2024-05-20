@@ -25,37 +25,7 @@ Simplificado s = new Simplificado();
     public InicioSesion() {
         initComponents();
     }
-
-    void guardarUsuario() {
-        
-
-    }
-
-    void guardarDatosArchivo() {
-
-        File archivo = new File("Usuarios.txt");
-        if (!archivo.exists()) {
-            try {
-                FileWriter escribir = new FileWriter("Usuarios.txt");
-                //escribir.write(sesion.id + "," + sesion.contra + "\n");
-                escribir.flush();
-                escribir.close();
-            } catch (IOException ex) {
-                Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            try {
-                FileWriter escribir = new FileWriter("Usuarios.txt", true);
-               // escribir.write(sesion.id + "," + sesion.contra + "\n");
-                escribir.flush();
-                escribir.close();
-            } catch (IOException ex) {
-                Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }
-
+    
     void leerArchivo() {
         String linea;
         boolean bandera = false;
@@ -199,6 +169,11 @@ Simplificado s = new Simplificado();
         agregarBt.setBackground(new java.awt.Color(102, 204, 255));
         agregarBt.setForeground(new java.awt.Color(255, 255, 255));
         agregarBt.setText("Nuevo Usuario");
+        agregarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBtActionPerformed(evt);
+            }
+        });
         getContentPane().add(agregarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -246,6 +221,12 @@ Simplificado s = new Simplificado();
             txtPass.setText("");
         }
     }//GEN-LAST:event_accesoBtActionPerformed
+
+    private void agregarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBtActionPerformed
+        RegistrarUsuario ru = new RegistrarUsuario();
+        ru.setVisible(true);
+        ru.setLocationRelativeTo(null);
+    }//GEN-LAST:event_agregarBtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

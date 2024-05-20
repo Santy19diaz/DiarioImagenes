@@ -104,6 +104,21 @@ public class InicioSesion extends javax.swing.JFrame {
         }
     }
 
+    public static void main(String[] args) {
+        InicioSesion is = new InicioSesion();
+/*
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+*/
+
+        is.setVisible(true);
+        is.setLocationRelativeTo(null);
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

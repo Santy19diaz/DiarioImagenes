@@ -1,6 +1,8 @@
 package GUI;
 
 import Persistencia.Usuarios;
+
+
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -111,7 +113,20 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         }
     }
 
-    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        RegistrarUsuario is = new RegistrarUsuario();
+/*
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+*/
+        is.setVisible(true);
+        is.setLocationRelativeTo(null);
+
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

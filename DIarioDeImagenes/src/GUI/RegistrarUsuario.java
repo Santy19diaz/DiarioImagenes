@@ -1,5 +1,6 @@
 package GUI;
 
+import Persistencia.Usuarios;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -16,9 +17,7 @@ import java.util.logging.Logger;
  * @author 19dia
  */
 public class RegistrarUsuario extends javax.swing.JFrame {
-
-   
-
+    Usuarios sesion;
     /**
      * Creates new form InicioSecion
      */
@@ -26,9 +25,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         initComponents();
     }
 
-    void guardarUsuario() {
-        
-
+     void guardarUsuario() {
+        sesion = new Usuarios(txtId.getText(), txtPass.getText(),txtPass1.getText());
     }
 
     void guardarDatosArchivo() {
@@ -161,7 +159,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOGIN");
+        setTitle("SIGN-UP");
         setBackground(new java.awt.Color(137, 209, 250));
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setResizable(false);
@@ -256,7 +254,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassKeyTyped
 
     private void accesoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoBtActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Usuario registado con exito");
+        InicioSesion is = new InicioSesion();
+        is.setVisible(true);
+        is.setLocationRelativeTo(null);
     }//GEN-LAST:event_accesoBtActionPerformed
 
     private void txtPass1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyTyped

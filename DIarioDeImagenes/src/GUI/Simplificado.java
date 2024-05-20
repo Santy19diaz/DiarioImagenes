@@ -20,17 +20,17 @@ public class Simplificado extends javax.swing.JFrame {
 
     public Simplificado() {
         initComponents();
-        botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
-        botonEditar.setIcon(setIcono("/iconos/edit.png", botonEditar));
-        botonOrdenar.setIcon(setIcono("/iconos/check.png", botonOrdenar));
-        botonBuscar.setIcon(setIcono("/iconos/buscar.png", botonBuscar));
-        botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
-        botonIzquierda.setIcon(setIcono("/iconos/left.png", botonIzquierda));
-        botonInicio.setIcon(setIcono("/iconos/first.png", botonInicio));
-        botonDerecha.setIcon(setIcono("/iconos/right.png", botonDerecha));
-        botonFinal.setIcon(setIcono("/iconos/last.png", botonFinal));
-        botonGuardar.setIcon(setIcono("/iconos/save-file.png", botonGuardar));
-        botonDiario.setIcon(setIcono("/iconos/left-arrow.png", botonDiario));
+//        botonAgregar.setIcon(setIcono("/iconos/add.png", botonAgregar));
+//        botonEditar.setIcon(setIcono("/iconos/edit.png", botonEditar));
+//        botonOrdenar.setIcon(setIcono("/iconos/check.png", botonOrdenar));
+//        botonBuscar.setIcon(setIcono("/iconos/buscar.png", botonBuscar));
+//        botonEliminar.setIcon(setIcono("/iconos/borrar.png", botonEliminar));
+//        botonIzquierda.setIcon(setIcono("/iconos/left.png", botonIzquierda));
+//        botonInicio.setIcon(setIcono("/iconos/first.png", botonInicio));
+//        botonDerecha.setIcon(setIcono("/iconos/right.png", botonDerecha));
+//        botonFinal.setIcon(setIcono("/iconos/last.png", botonFinal));
+//        botonGuardar.setIcon(setIcono("/iconos/save-file.png", botonGuardar));
+//        botonDiario.setIcon(setIcono("/iconos/left-arrow.png", botonDiario));
 
     }
 
